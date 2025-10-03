@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Thiếp Điện Tử - Khách Sạn Sâm Nguyễn</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* ------------------------------------ */
+        /* THIẾT LẬP CHUNG & TÔNG MÀU LOGO */
+        /* ------------------------------------ */
+        :root {
+            --primary-color: #194639; /* Xanh đậm từ Logo */
+            --secondary-color: #DAA520; /* Vàng đồng cho điểm nhấn */
+            --light-bg: #e5f1ec; /* Màu nền nhẹ nhàng, hài hòa với xanh đậm */
+            --text-color: #333;
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            margin: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .card-container {
+            width: 100%;
+            max-width: 450px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* ------------------------------------ */
+        /* HEADER VÀ PROFILE */
+        /* ------------------------------------ */
+        .card-header {
+            position: relative;
+            height: 150px;
+            /* Ảnh nền 'ảnh bìa.jpg' */
+            background-image: url('ảnh bìa.jpg'); 
+            background-size: cover;
+            background-position: center;
+        }
+
+        .profile-section {
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            padding-bottom: 20px;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
+            display: block;
+        }
+
+        .profile-details {
+            margin-top: 10px;
+            color: var(--text-color);
+        }
+
+        .profile-details h2 {
+            margin: 5px 0 0;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        .profile-details p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        /* QR Code */
+        .qr-code {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            /* THAY [LINK_ANH_QR_CUA_BAN] Bằng link ảnh QR Code */
+            background-image: url('[LINK_ANH_QR_CUA_BAN]'); 
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-color: white; 
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            z-index: 10;
+        }
+        
+        /* ------------------------------------ */
+        /* NÚT GỌI CHÍNH */
+        /* ------------------------------------ */
+        .main-call {
+            margin-top: 50px;
+            padding: 0 20px;
+        }
+        
+        .main-call a {
+            display: block;
+            padding: 12px;
+            background-color: #dc3545; /* Vẫn giữ màu đỏ nổi bật cho CTA Call */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 700;
+            box-shadow: 0 3px 8px rgba(220, 53, 69, 0.4);
+            transition: opacity 0.2s;
+        }
+        .main-call a:hover { opacity: 0.9; }
+
+        /* ------------------------------------ */
+        /* CÁC HÀNG HÀNH ĐỘNG PHỤ */
+        /* ------------------------------------ */
+        .action-sections {
+            padding: 20px;
+            padding-top: 10px; 
+            color: var(--text-color);
+        }
+
+        .action-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--light-bg); 
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin-bottom: 12px;
+        }
+
+        .action-row a {
+            flex-grow: 1;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+        
+        .action-row .icon-left {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        .action-row .icon-right {
+            margin-left: 15px;
+            color: #999;
+        }
+
+        /* Bố cục 2 nút trong 1 hàng */
+        .action-row.split-2 {
+            padding: 0;
+            background-color: transparent;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .split-2 a {
+            background-color: var(--light-bg);
+            padding: 12px 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: background-color 0.2s;
+        }
+        .split-2 a:hover { background-color: #d8e6df; }
+        
+        /* ------------------------------------ */
+        /* NHÚNG VIDEO (YOUTUBE) */
+        /* ------------------------------------ */
+        .video-embed-section {
+            padding: 10px 20px 20px 20px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Tỷ lệ 16:9 */
+            height: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card-container">
+    <div class="card-header">
+        <div class="qr-code"></div> 
+    </div>
+
+    <div class="profile-section">
+        <img src="logo2.png" alt="Logo Khách Sạn Sâm Nguyễn" class="profile-image">
+        <div class="profile-details">
+            <h2>KHÁCH SẠN SÂM NGUYỄN</h2>
+            <p>Bộ phận Kinh doanh & Dịch vụ Khách hàng</p>
+        </div>
+    </div>
+    
+    <div class="main-call">
+        <a href="tel:+84908845284">
+            <i class="fa-solid fa-phone"></i> 0908845284
+        </a>
+    </div>
+
+    <div class="action-sections">
+        
+        <div class="action-row split-2" style="margin-top: 15px;">
+            <a href="javascript:void(0);" onclick="alert('Vui lòng sử dụng tính năng Chia sẻ của trình duyệt để chia sẻ liên kết này.');">
+                <i class="fa-solid fa-share-nodes"></i> Chia sẻ
+            </a>
+            <a href="SamNguyenHotel.vcf" download="SamNguyenHotel.vcf">
+                <i class="fa-solid fa-address-book"></i> Lưu Danh bạ
+            </a>
+        </div>
+        
+        <div class="action-row split-2">
+            <a href="https://www.youtube.com/@samnguyen8233" target="_blank">
+                <i class="fa-brands fa-youtube"></i> Xem phòng
+            </a>
+            <a href="#" onclick="alert('Bảng giá đang được cập nhật. Vui lòng liên hệ trực tiếp để nhận báo giá.')" style="opacity: 0.7;">
+                <i class="fa-solid fa-tag"></i> Bảng giá (Chưa có)
+            </a>
+        </div>
+        
+        <div class="action-row">
+            <span class="icon-left"><i class="fa-brands fa-whatsapp"></i> Zalo</span>
+            <a href="https://zalo.me/0908845284" target="_blank">0908845284</a>
+            <span class="icon-right"><i class="fa-solid fa-square-up-right"></i></span>
+        </div>
+
+        <div class="action-row">
+            <span class="icon-left"><i class="fa-brands fa-facebook"></i> Fanpage</span>
+            <a href="https://facebook.com/SamNguyenHotel" target="_blank">facebook.com/SamNguyenHotel</a>
+            <span class="icon-right"><i class="fa-solid fa-square-up-right"></i></span>
+        </div>
+        
+        <div class="action-row" style="background-color: white; border: 1px solid #ddd; padding: 10px 0; margin-top: 20px; flex-direction: column;">
+            <p style="margin: 0 0 5px 0; font-weight: 700; color: var(--primary-color);">
+                 <i class="fa-solid fa-star-half-stroke"></i> Đánh giá Google Maps
+            </p>
+            <div style="display: flex; width: 100%; justify-content: center; align-items: center; padding: 0 15px;">
+                <span style="flex-grow: 1; text-align: left; font-size: 0.9em;"><i class="fa-solid fa-location-dot" style="color: #999;"></i> 49 Lê Ngọc Hân, Phường 1, TP Vũng Tàu</span>
+                
+                <a href="https://maps.app.goo.gl/3VPesC91XDbdVhon9" target="_blank" style="flex-grow: 0; font-size: 0.9em; font-weight: 700; color: #dc3545;">Chỉ đường <i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="video-embed-section">
+        <h3 style="text-align: left; margin: 0 0 10px 0; font-size: 1.1em; color: #666;">Video Giới Thiệu</h3>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/aHnEfagwNNo?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    
+</div>
+
+</body>
+</html>

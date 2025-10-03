@@ -46,19 +46,25 @@
         .card-header {
             position: relative;
             height: 150px;
-            /* Ảnh nền 'ảnh bìa.jpg' */
+            /* Thay thế đường dẫn ảnh bìa của bạn tại đây */
             background-image: url('ảnh bìa.jpg'); 
             background-size: cover;
             background-position: center;
         }
+        
+        /* LỚP BAO BỌC SỬA LỖI CHỒNG CHÉO */
+        .profile-header {
+            position: relative; 
+            padding: 0 15px; 
+            margin-top: -80px; /* Kéo lên để chồng lên Header */
+            text-align: center;
+        }
 
         .profile-section {
-            position: absolute;
-            top: 70px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
             padding-bottom: 20px;
+            /* QUAN TRỌNG: Tạo khoảng trống bên phải cho QR Code */
+            padding-right: 70px; 
+            padding-left: 70px;
         }
 
         .profile-image {
@@ -89,10 +95,10 @@
             color: #666;
         }
         
-        /* QR Code */
+        /* QR Code ĐÃ SỬA LỖI VỊ TRÍ */
         .qr-code {
             position: absolute;
-            top: 50%;
+            top: 50px; /* Điều chỉnh vị trí so với .profile-header */
             right: 15px;
             transform: translateY(-50%);
             width: 50px;
@@ -108,23 +114,23 @@
         }
         
         /* ------------------------------------ */
-        /* NÚT GỌI CHÍNH */
+        /* NÚT GỌI CHÍNH (ĐÃ SỬA MÀU VÀ BỐ CỤC) */
         /* ------------------------------------ */
         .main-call {
-            margin-top: 50px;
+            margin-top: 20px;
             padding: 0 20px;
         }
         
         .main-call a {
             display: block;
             padding: 12px;
-            background-color: #dc3545; /* Vẫn giữ màu đỏ nổi bật cho CTA Call */
+            background-color: #e54c4c; /* Màu đỏ tương đồng trong hình */
             color: white;
             text-decoration: none;
             border-radius: 8px;
             font-size: 1.1em;
             font-weight: 700;
-            box-shadow: 0 3px 8px rgba(220, 53, 69, 0.4);
+            box-shadow: 0 3px 8px rgba(229, 76, 76, 0.4); /* Sử dụng màu đỏ mới */
             transition: opacity 0.2s;
         }
         .main-call a:hover { opacity: 0.9; }
@@ -138,6 +144,7 @@
             color: var(--text-color);
         }
 
+        /* Nút lớn hàng dọc */
         .action-row {
             display: flex;
             justify-content: space-between;
@@ -181,6 +188,8 @@
             border-radius: 8px;
             text-align: center;
             transition: background-color 0.2s;
+            /* Đảm bảo chữ màu đen */
+            color: var(--text-color); 
         }
         .split-2 a:hover { background-color: #d8e6df; }
         
@@ -209,26 +218,37 @@
             height: 100%;
             border: none;
         }
+        
+        /* Ẩn thanh cuộn trên thiết bị di động */
+        ::-webkit-scrollbar {
+            width: 0;
+            background: transparent;
+        }
+        
     </style>
 </head>
 <body>
 
 <div class="card-container">
     <div class="card-header">
-        <div class="qr-code"></div> 
-    </div>
+        </div>
 
-    <div class="profile-section">
-        <img src="logo2.png" alt="Logo Khách Sạn Sâm Nguyễn" class="profile-image">
-        <div class="profile-details">
-            <h2>KHÁCH SẠN SÂM NGUYỄN</h2>
-            <p>Bộ phận Kinh doanh & Dịch vụ Khách hàng</p>
+    <div class="profile-header">
+        
+        <div class="qr-code"></div> 
+
+        <div class="profile-section">
+            <img src="logo2.png" alt="Logo Khách Sạn Sâm Nguyễn" class="profile-image">
+            <div class="profile-details">
+                <h2>KHÁCH SẠN SÂM NGUYỄN</h2>
+                <p>Bộ phận Kinh doanh & Dịch vụ Khách hàng</p>
+            </div>
         </div>
     </div>
     
     <div class="main-call">
         <a href="tel:+84908845284">
-            <i class="fa-solid fa-phone"></i> 0908845284
+            <i class="fa-solid fa-phone"></i> GỌI NGAY: 0908845284
         </a>
     </div>
 
@@ -280,11 +300,14 @@
     <div class="video-embed-section">
         <h3 style="text-align: left; margin: 0 0 10px 0; font-size: 1.1em; color: #666;">Video Giới Thiệu</h3>
         <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/aHnEfagwNNo?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/aHnEfagwNTo?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
     
-</div>
+    <div style="height: 50px; background-color: #f4f4f4;"></div>
+    </div>
 
 </body>
 </html>
+
+   

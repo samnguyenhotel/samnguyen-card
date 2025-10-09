@@ -11,69 +11,68 @@
 <style>
 /* --- Biến CSS & Cài đặt chung --- */
 :root {
-  --primary: #DAA520; /* Màu vàng đồng */
-  --accent: #194639; /* Màu xanh rêu đậm */
-  --light: #f7f3e8; /* Màu nền sáng nhẹ */
-  --text: #333;
+    --primary: #DAA520; /* Màu vàng đồng */
+    --accent: #194639; /* Màu xanh rêu đậm */
+    --light: #f7f3e8; /* Màu nền sáng nhẹ */
+    --text: #333;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background: #f4f4f4;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  /* Fix cho mobile khi modal mở */
-  min-height: 100vh;
-  padding-bottom: 70px; /* Khoảng trống cho nút gọi cố định */
+    font-family: 'Roboto', sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding-bottom: 70px;
 }
 
 .card {
-  width: 100%;
-  max-width: 450px;
-  background: #fff;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
-  border-radius: 12px;
-  overflow: hidden;
-  position: relative;
+    width: 100%;
+    max-width: 450px;
+    background: #fff;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
 }
 
 /* --- Header & Profile --- */
 .hero {
-  height: 170px;
-  background: url('ảnh bìa.jpg') center/cover no-repeat;
-  position: relative;
+    height: 170px;
+    background: url('ảnh bìa.jpg') center/cover no-repeat;
+    position: relative;
 }
 
 .profile {
-  text-align: center;
-  margin-top: -60px;
-  position: relative;
-  padding: 0 18px; /* Thêm padding để nội dung không chạm mép */
+    text-align: center;
+    margin-top: -60px;
+    position: relative;
+    padding: 0 18px;
 }
 .logo-wrapper {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 .logo {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  border: 4px solid #fff; /* Tăng độ dày viền */
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 .qr-card {
-  position: absolute;
-  bottom: 0;
-  right: -30px; /* Điều chỉnh vị trí QR */
-  width: 45px;
-  height: 45px;
-  border: 1px solid #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  background: #fff url('qr-card.png') center/cover no-repeat;
-  background-size: 85%; /* Làm QR nhỏ lại một chút */
+    position: absolute;
+    bottom: 0;
+    right: -30px;
+    width: 55px;
+    height: 55px;
+    border: 0px solid #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    background: #fff url('qr-card.png') center/cover no-repeat;
+    background-size: 90%;
 }
 
 /* title */
@@ -82,17 +81,17 @@ body {
 
 /* --- Call Button --- */
 .call-btn {
-  display:block;
-  text-decoration:none;
-  background:#e54c4c;
-  color:#fff;
-  padding:12px;
-  border-radius:10px;
-  font-weight:700;
-  text-align:center;
-  margin:15px 18px;
-  box-shadow:0 4px 12px rgba(229,76,76,0.4);
-  transition: transform 0.2s;
+    display:block;
+    text-decoration:none;
+    background:#e54c4c;
+    color:#fff;
+    padding:12px;
+    border-radius:10px;
+    font-weight:700;
+    text-align:center;
+    margin:15px 18px;
+    box-shadow:0 4px 12px rgba(229,76,76,0.4);
+    transition: transform 0.2s;
 }
 .call-btn:active {
     transform: scale(0.98);
@@ -100,23 +99,23 @@ body {
 
 /* --- Actions Row (Chia sẻ, Lưu danh bạ) --- */
 .actions-row {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  padding:0 18px 10px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    padding:0 18px 10px;
 }
 .actions-row a {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  background:var(--light);
-  text-decoration:none;
-  color:var(--text);
-  padding:10px;
-  border-radius:8px;
-  font-weight:600;
-  transition: background 0.2s;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    background:var(--light);
+    text-decoration:none;
+    color:var(--text);
+    padding:10px;
+    border-radius:8px;
+    font-weight:600;
+    transition: background 0.2s;
 }
 .actions-row a:hover {
     background: #e3dec7;
@@ -130,33 +129,126 @@ body {
     padding:0 18px 18px;
 }
 .icon {text-align:center;text-decoration:none;color:var(--text);font-size: 0.9rem;}
-/* Đã sửa Zalo icon thành fa-brands fa-zalo */
 .icon i {
-  width:50px;height:50px;border-radius:50%;display:flex;
-  align-items:center;justify-content:center;margin:0 auto 6px;
-  box-shadow:0 2px 8px rgba(0,0,0,0.08);font-size:1.8rem;
-  transition: transform 0.2s;
+    width:50px;height:50px;border-radius:50%;display:flex;
+    align-items:center;justify-content:center;margin:0 auto 6px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);font-size:1.8rem;
+    transition: transform 0.2s;
 }
 .icon i:active {
     transform: scale(0.9);
 }
-.icon-zalo i{color:#0084ff;background:#e8f4ff;}
+.icon-zalo img {
+    transition: transform 0.2s;
+}
+.icon-zalo img:active {
+    transform: scale(0.9);
+}
 .icon-fb i{color:#3b5998;background:#e9ecff;}
 .icon-yt i{color:#ff0000;background:#fff0f0;}
 .icon-map i{color:#4285f4;background:#e8f4ff;}
+
+/* --- Hàng Icon MỚI --- */
+.icon-bank i {
+    color: #4CAF50;
+    background: #e6f6e6;
+}
+
+.icon-mail i {
+    color: #DD4B39;
+    background: #ffe6e6;
+}
+
+.icon-tiktok i {
+    color: #000000;
+    background: #f0f0f0;
+}
+
+.icon-momo i {
+    color: #AE1A7A;
+    background: #fff0f9;
+}
 
 /* --- Room List --- */
 .rooms {padding:14px 18px;}
 .rooms h3 {margin:0 0 12px;color:var(--accent);font-size:1.3rem;border-bottom:3px solid var(--primary);padding-bottom:8px;}
 .room-list {display:grid;gap:14px;}
-.room-card {background:#fafafa;border-radius:10px;overflow:hidden;box-shadow:0 4px 14px rgba(0,0,0,0.05);cursor:pointer;transition:box-shadow 0.2s;}
+.room-card {
+    background:#fafafa;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,0.05);
+    cursor:pointer;
+    transition:box-shadow 0.2s;
+    position: relative;
+}
 .room-card:hover {
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 .room-thumb {height:140px;background-size:cover;background-position:center;}
-.room-body {padding:10px;}
-.room-title {margin:0 0 5px;font-weight:700;color:var(--accent);font-size: 1.1rem;}
-.room-sub {margin:0;font-size:0.9rem;color:#555;}
+
+/* === CSS CHO OVERLAY HIỆN SẴN (Đã sửa lại chiều cao và vị trí) === */
+.room-overlay {
+    position: absolute;
+    bottom: 0; /* Đẩy xuống dưới cùng */
+    left: 0;
+    width: 100%;
+    height: 60px; /* Chiều cao cố định */
+    background: rgba(255, 255, 255, 0.4); 
+    color: #194639;
+    padding: 8px 10px; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+    opacity: 1; /* LUÔN HIỂN THỊ */
+}
+
+/* Cấu trúc dòng 1 (Tiêu đề + Sao) */
+.overlay-info-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* Cấu trúc dòng 2 (Nhãn Giá + Giá) */
+.overlay-info-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 2px;
+    font-size: 0.8rem;
+}
+
+.overlay-title {
+    margin: 0;
+    color: #194639;
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.stars {
+    color: var(--primary);
+    font-size: 0.8rem;
+}
+
+.overlay-price {
+    font-weight: 700;
+    color: #194639;
+    font-size: 1.1em;
+}
+
+/* Ẩn hoàn toàn .room-body để overlay thay thế */
+.room-body {
+    display: none !important; 
+}
+/* === KẾT THÚC CSS CHO OVERLAY HIỆN SẴN === */
 
 /* --- Video Section --- */
 .video-section {padding:0 18px 18px;}
@@ -166,13 +258,13 @@ body {
 
 /* --- Modal Chi Tiết Phòng --- */
 .modal-full {
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:1000;
-  background:#fff;
-  overflow-y:auto; /* Thay đổi overflow thành auto */
-  -webkit-overflow-scrolling: touch;
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:1000;
+    background:#fff;
+    overflow-y:auto;
+    -webkit-overflow-scrolling: touch;
 }
 .modal-inner {max-width:450px;margin:auto;background:#fff; min-height: 100%;}
 .modal-header-img {width:100%;height:240px;object-fit:cover;}
@@ -196,31 +288,31 @@ body {
 .price-row .label {font-weight: 500; color: #555;}
 .price-row .val {color:#e54c4c;font-weight:700;}
 .close-modal {
-  position:fixed;top:12px;right:12px;width:36px;height:36px;border-radius:50%;
-  background:rgba(0,0,0,0.6);color:#fff;display:flex;align-items:center;
-  justify-content:center;font-size:1.6rem;cursor:pointer;z-index:1100;
+    position:fixed;top:12px;right:12px;width:36px;height:36px;border-radius:50%;
+    background:rgba(0,0,0,0.6);color:#fff;display:flex;align-items:center;
+    justify-content:center;font-size:1.6rem;cursor:pointer;z-index:1100;
 }
 
-/* --- OTA Links --- */
+/* --- OTA Links (ĐÃ DI CHUYỂN VÀO MODAL) --- */
 .ota-inline {
-  margin-top:12px;
-  background:var(--light);
-  padding:12px;
-  border-radius:10px;
-  box-shadow:0 4px 14px rgba(0,0,0,0.05);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+    margin-top:12px;
+    background:var(--light);
+    padding:12px;
+    border-radius:10px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.05);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 .ota-inline .left {font-weight:700;color:var(--text);display:flex;align-items:center;gap:6px;}
 .ota-links {display:flex;gap:8px;}
 .ota-links a {
-  text-decoration:none;
-  padding:6px 10px;
-  border-radius:6px;
-  font-weight:700;
-  font-size: 0.9rem;
-  transition: opacity 0.2s;
+    text-decoration:none;
+    padding:6px 10px;
+    border-radius:6px;
+    font-weight:700;
+    font-size: 0.9rem;
+    transition: opacity 0.2s;
 }
 .ota-links a:hover {opacity: 0.8;}
 .ota-agoda {background:#f4ebff;color:#7a3eff;}
@@ -228,24 +320,24 @@ body {
 
 /* --- Nút Gọi Cố Định --- */
 .fixed-call {
-  position:fixed;
-  bottom:10px; /* Điều chỉnh vị trí */
-  left:50%;
-  transform:translateX(-50%);
-  width:calc(100% - 36px);
-  max-width:420px;
-  z-index: 999;
+    position:fixed;
+    bottom:10px;
+    left:50%;
+    transform:translateX(-50%);
+    width:calc(100% - 36px);
+    max-width:420px;
+    z-index: 999;
 }
 .fixed-call a {
-  display:block;
-  background:var(--accent);
-  color:#fff;
-  text-align:center;
-  padding:12px;
-  border-radius:10px;
-  font-weight:700;
-  text-decoration:none;
-  transition: background 0.2s;
+    display:block;
+    background:var(--accent);
+    color:#fff;
+    text-align:center;
+    padding:12px;
+    border-radius:10px;
+    font-weight:700;
+    text-decoration:none;
+    transition: background 0.2s;
 }
 .fixed-call a:hover {
     background: #102e26;
@@ -253,262 +345,282 @@ body {
 
 /* --- Modal Ngân hàng --- */
 .modal-overlay {
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.7);
-  z-index:1200;
-  align-items:center;
-  justify-content:center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.7);
+    z-index:1200;
+    align-items:center;
+    justify-content:center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 .modal-overlay.open {
     display:flex;
     opacity: 1;
 }
 .bank-card {
-  background:#fff;
-  padding:18px;
-  border-radius:12px;
-  max-width:360px;
-  width:90%;
-  text-align:center;
-  box-shadow:0 6px 30px rgba(0,0,0,0.3);
-  position:relative;
-  transform: translateY(20px);
-  transition: transform 0.3s ease;
+    background:#fff;
+    padding:18px;
+    border-radius:12px;
+    max-width:360px;
+    width:90%;
+    text-align:center;
+    box-shadow:0 6px 30px rgba(0,0,0,0.3);
+    position:relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
 }
 .modal-overlay.open .bank-card {
     transform: translateY(0);
 }
 .bank-card img {
-  width:150px; /* Tăng kích thước QR */
-  border-radius:10px;
-  margin-bottom:15px;
-  border: 1px solid #eee;
+    width:150px;
+    border-radius:10px;
+    margin-bottom:15px;
+    border: 1px solid #eee;
 }
 .bank-card h4 {margin:0 0 10px;color:var(--accent);font-size: 1.2rem;}
 .bank-row {display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #eee;font-size: 0.95rem;}
 .bank-row:last-child{border-bottom:none;}
 .bank-row span:last-child {font-weight: 500;}
 .close-bank {
-  position:absolute;
-  top:8px;
-  right:12px;
-  color:#666;
-  font-size:1.6rem;
-  cursor:pointer;
-  line-height: 1;
+    position:absolute;
+    top:8px;
+    right:12px;
+    color:#666;
+    font-size:1.6rem;
+    cursor:pointer;
+    line-height: 1;
 }
 </style>
 </head>
 <body>
 
 <div class="card">
-  <div class="hero"></div>
+<div class="hero"></div>
 
-  <div class="profile">
-    <div class="logo-wrapper">
-      <img src="logo.png" alt="Logo Sâm Nguyễn Hotel" class="logo">
-      <div class="qr-card" title="Quét mã để truy cập E-Card"></div>
+<div class="profile">
+<div class="logo-wrapper">
+<img src="logo.png" alt="Logo Sâm Nguyễn Hotel" class="logo">
+<div class="qr-card" title="Quét mã để truy cập E-Card"></div>
+</div>
+<div class="hotel-name">SÂM NGUYỄN HOTEL</div>
+<div class="hotel-sub">Hỗ trợ trực tuyến 24/7</div>
+</div>
+
+<a href="tel:+84908845284" class="call-btn"><i class="fa-solid fa-phone"></i> GỌI NGAY: 0908845284</a>
+
+<div class="actions-row">
+<a href="javascript:void(0)" onclick="shareCard()"><i class="fa-solid fa-share-nodes"></i> Chia sẻ</a>
+<a href="SamNguyenHotel.vcf" download><i class="fa-solid fa-address-book"></i> Lưu danh bạ</a>
+</div>
+
+<div class="icon-grid">
+    <a href="https://zalo.me/0908845284" target="_blank" class="icon icon-zalo">
+    <img src="zalo.svg" alt="Zalo" style="width:42px;height:42px;border-radius:50%;margin:0 auto 6px;display:block;box-shadow:0 2px 8px rgba(0,0,0,0.08);background:#e8f4ff;padding:6px;">
+    <span>Zalo</span>
+</a>
+<a href="https://facebook.com/SamNguyenHotel" target="_blank" class="icon icon-fb"><i class="fa-brands fa-facebook-f"></i><span>Fanpage</span></a>
+<a href="https://www.youtube.com/@samnguyen8233" target="_blank" class="icon icon-yt"><i class="fa-brands fa-youtube"></i><span>YouTube</span></a>
+<a href="https://maps.app.goo.gl/YourHotelLocationLink" target="_blank" class="icon icon-map"><i class="fa-solid fa-map-location-dot"></i><span>Vị trí</span></a>
+</div>
+
+<div class="icon-grid">
+<a href="javascript:void(0)" onclick="openBank()" class="icon icon-bank"><i class="fa-solid fa-building-columns"></i><span>Ngân hàng</span></a>
+<a href="mailto:samnguyen.hotel@gmail.com" class="icon icon-mail"><i class="fa-solid fa-envelope"></i><span>Mail</span></a>
+<a href="https://www.tiktok.com/@yourtiktokname" target="_blank" class="icon icon-tiktok"><i class="fa-brands fa-tiktok"></i><span>TikTok</span></a>
+<a href="tel:0908845284" class="icon icon-momo"><i class="fa-solid fa-wallet"></i><span>MoMo</span></a>
+</div>
+
+<div class="rooms">
+<h3>DANH SÁCH PHÒNG</h3>
+<div class="room-list">
+<div class="room-card" onclick="showRoom('Phòng 1 giường','room-image-1.jpg','Phòng dành cho 1-2 khách, với đầy đủ tiện nghi cơ bản, cửa sổ thoáng mát.','250.000 VNĐ','350.000 VNĐ','500.000 VNĐ')">
+<div class="room-thumb" style="background-image:url('room-image-1.jpg')"></div>
+
+<div class="room-overlay">
+    <div class="overlay-info-top">
+        <p class="overlay-title">Phòng 1 Giường</p>
+        <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
     </div>
-    <div class="hotel-name">SÂM NGUYỄN HOTEL</div>
-    <div class="hotel-sub">Hỗ trợ trực tuyến 24/7</div>
-  </div>
-
-  <a href="tel:+84908845284" class="call-btn"><i class="fa-solid fa-phone"></i> GỌI NGAY: 0908845284</a>
-
-  <div class="actions-row">
-    <a href="javascript:void(0)" onclick="shareCard()"><i class="fa-solid fa-share-nodes"></i> Chia sẻ</a>
-    <a href="SamNguyenHotel.vcf" download><i class="fa-solid fa-address-book"></i> Lưu danh bạ</a>
-  </div>
-
-  <div class="icon-grid">
-    <a href="https://zalo.me/0908845284" target="_blank" class="icon icon-zalo"><i class="fa-brands fa-zalo"></i><span>Zalo</span></a>
-    <a href="https://facebook.com/SamNguyenHotel" target="_blank" class="icon icon-fb"><i class="fa-brands fa-facebook-f"></i><span>Fanpage</span></a>
-    <a href="https://www.youtube.com/@samnguyen8233" target="_blank" class="icon icon-yt"><i class="fa-brands fa-youtube"></i><span>YouTube</span></a>
-    <a href="https://maps.app.goo.gl/YourHotelLocationLink" target="_blank" class="icon icon-map"><i class="fa-solid fa-map-location-dot"></i><span>Vị trí</span></a>
-  </div>
-
-  <div class="actions-row" style="padding: 0 18px 18px;">
-    <a href="javascript:void(0)" onclick="openBank()">
-      <i class="fa-solid fa-building-columns"></i> Thông tin Thanh toán
-    </a>
-  </div>
-
-  <div class="rooms">
-    <h3>DANH SÁCH PHÒNG</h3>
-    <div class="room-list">
-      <div class="room-card" onclick="showRoom('Phòng 1 giường','room-image-1.jpg','Phòng dành cho 1-2 khách, với đầy đủ tiện nghi cơ bản, cửa sổ thoáng mát.','250.000 VNĐ','350.000 VNĐ','500.000 VNĐ')">
-        <div class="room-thumb" style="background-image:url('room-image-1.jpg')"></div>
-        <div class="room-body">
-          <div class="room-title">Phòng 1 Giường</div>
-          <div class="room-sub">Giá từ 250.000đ / 3 giờ</div>
-        </div>
-      </div>
-
-      <div class="room-card" onclick="showRoom('Phòng 2 giường','room-image-2.jpg','Phòng 2 giường đôi, phù hợp gia đình nhỏ hoặc nhóm 3-4 người.','350.000 VNĐ','580.000 VNĐ','750.000 VNĐ')">
-        <div class="room-thumb" style="background-image:url('room-image-2.jpg')"></div>
-        <div class="room-body">
-          <div class="room-title">Phòng 2 Giường</div>
-          <div class="room-sub">Giá từ 350.000đ / 3 giờ</div>
-        </div>
-      </div>
-      
-      <div class="room-card" onclick="showRoom('Phòng 3 giường','room-image-3.jpg','Phòng rộng rãi nhất, cho nhóm bạn hoặc gia đình 6 người. Thiết kế hiện đại.','400.000 VNĐ','650.000 VNĐ','850.000 VNĐ')">
-        <div class="room-thumb" style="background-image:url('room-image-3.jpg')"></div>
-        <div class="room-body">
-          <div class="room-title">Phòng 3 Giường</div>
-          <div class="room-sub">Giá từ 400.000đ / 3 giờ</div>
-        </div>
-      </div>
-
-      <div class="room-card" onclick="showRoom('VIP Luxury','room-image-vip.jpg','Phòng VIP sang trọng, có bồn tắm massage, view đẹp. Trải nghiệm đẳng cấp.','300.000 VNĐ','550.000 VNĐ','700.000 VNĐ')">
-        <div class="room-thumb" style="background-image:url('room-image-vip.jpg')"></div>
-        <div class="room-body">
-          <div class="room-title">VIP Luxury</div>
-          <div class="room-sub">Giá từ 300.000đ / 3 giờ</div>
-        </div>
-      </div>
-
-      <div class="room-card" onclick="showRoom('Căn Hộ mini','room-image-apt.jpg','Căn hộ mini đầy đủ tiện nghi, có bếp riêng, lý tưởng cho lưu trú dài ngày.','500.000 VNĐ','750.000 VNĐ','950.000 VNĐ')">
-        <div class="room-thumb" style="background-image:url('room-image-apt.jpg')"></div>
-        <div class="room-body">
-          <div class="room-title">Căn Hộ Mini</div>
-          <div class="room-sub">Giá từ 500.000đ / 3 giờ</div>
-        </div>
-      </div>
+    <div class="overlay-info-bottom">
+        <span>Giá chỉ từ</span>
+        <div class="overlay-price">Chỉ từ 250.000đ / 3h</div>
     </div>
-  </div>
-  
-  <div class="rooms">
-    <h3>ĐẶT PHÒNG TRỰC TUYẾN</h3>
-    <div class="ota-inline">
-        <div class="left"><i class="fa-solid fa-hotel"></i> So sánh giá và đặt phòng</div>
-        <div class="ota-links">
-            <a href="https://www.agoda.com/your-hotel-link" target="_blank" class="ota-agoda">Agoda</a>
-            <a href="https://www.traveloka.com/your-hotel-link" target="_blank" class="ota-traveloka">Traveloka</a>
-        </div>
-    </div>
-  </div>
+</div>
+</div>
 
-  <div class="video-section">
-    <h4>Video Giới Thiệu</h4>
-    <div class="video-wrap">
-      <iframe src="https://www.youtube.com/embed/0kTsCnvuG-I" allowfullscreen></iframe>
+<div class="room-card" onclick="showRoom('Phòng 2 giường','room-image-2.jpg','Phòng 2 giường đôi, phù hợp gia đình nhỏ hoặc nhóm 3-4 người.','350.000 VNĐ','580.000 VNĐ','750.000 VNĐ')">
+<div class="room-thumb" style="background-image:url('room-image-2.jpg')"></div>
+<div class="room-overlay">
+    <div class="overlay-info-top">
+        <p class="overlay-title">Phòng 2 Giường</p>
+        <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
     </div>
-  </div>
+    <div class="overlay-info-bottom">
+        <span>Giá chỉ từ</span>
+        <div class="overlay-price">Chỉ từ 350.000đ / 3h</div>
+    </div>
+</div>
+</div>
+
+<div class="room-card" onclick="showRoom('Phòng 3 giường','room-image-3.jpg','Phòng rộng rãi nhất, cho nhóm bạn hoặc gia đình 6 người. Thiết kế hiện đại.','400.000 VNĐ','650.000 VNĐ','850.000 VNĐ')">
+<div class="room-thumb" style="background-image:url('room-image-3.jpg')"></div>
+<div class="room-overlay">
+    <div class="overlay-info-top">
+        <p class="overlay-title">Phòng 3 Giường</p>
+        <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+    </div>
+    <div class="overlay-info-bottom">
+        <span>Giá chỉ từ</span>
+        <div class="overlay-price">Chỉ từ 400.000đ / 3h</div>
+    </div>
+</div>
+</div>
+
+<div class="room-card" onclick="showRoom('VIP Luxury','room-image-vip.jpg','Phòng VIP sang trọng, có bồn tắm massage, view đẹp. Trải nghiệm đẳng cấp.','300.000 VNĐ','550.000 VNĐ','700.000 VNĐ')">
+<div class="room-thumb" style="background-image:url('room-image-vip.jpg')"></div>
+<div class="room-overlay">
+    <div class="overlay-info-top">
+        <p class="overlay-title">VIP Luxury</p>
+        <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+    </div>
+    <div class="overlay-info-bottom">
+        <span>Giá chỉ từ</span>
+        <div class="overlay-price">Chỉ từ 300.000đ / 3h</div>
+    </div>
+</div>
+</div>
+
+<div class="room-card" onclick="showRoom('Căn Hộ mini','room-image-apt.jpg','Căn hộ mini đầy đủ tiện nghi, có bếp riêng, lý tưởng cho lưu trú dài ngày.','500.000 VNĐ','750.000 VNĐ','950.000 VNĐ')">
+<div class="room-thumb" style="background-image:url('room-image-apt.jpg')"></div>
+<div class="room-overlay">
+    <div class="overlay-info-top">
+        <p class="overlay-title">Căn Hộ Mini</p>
+        <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+    </div>
+    <div class="overlay-info-bottom">
+        <span>Giá chỉ từ</span>
+        <div class="overlay-price">Chỉ từ 500.000đ / 3h</div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<div class="video-section">
+<h4>Video Giới Thiệu</h4>
+<div class="video-wrap">
+<iframe src="https://www.youtube.com/embed/0kTsCnvuG-I" allowfullscreen></iframe>
+</div>
+</div>
 </div>
 
 <div class="modal-full" id="roomModal">
-    <div class="close-modal" onclick="closeRoom()">&times;</div>
-    <div class="modal-inner">
-        <img src="" alt="Ảnh phòng" class="modal-header-img" id="roomImg">
-        <div class="modal-content">
-            <h4 id="roomTitle"></h4>
-            <p id="roomDesc"></p>
+<div class="close-modal" onclick="closeRoom()">×</div>
+<div class="modal-inner">
+<img src="" alt="Ảnh phòng" class="modal-header-img" id="roomImg">
+<div class="modal-content">
+<h4 id="roomTitle"></h4>
+<p id="roomDesc"></p>
 
-            <div class="price-table">
-                <h5>BẢNG GIÁ CHI TIẾT</h5>
-                <div class="price-row"><span class="label">3 giờ đầu tiên:</span><span class="val" id="pHour"></span></div>
-                <div class="price-row"><span class="label">Qua đêm:</span><span class="val" id="pOver"></span></div>
-                <div class="price-row"><span class="label">Trọn ngày:</span><span class="val" id="pFull"></span></div>
-            </div>
+<div class="price-table">
+<h5>BẢNG GIÁ CHI TIẾT</h5>
+<div class="price-row"><span class="label">3 giờ đầu tiên:</span><span class="val" id="pHour"></span></div>
+<div class="price-row"><span class="label">Qua đêm:</span><span class="val" id="pOver"></span></div>
+<div class="price-row"><span class="label">Trọn ngày:</span><span class="val" id="pFull"></span></div>
+</div>
 
-            <a href="tel:+84908845284" class="call-btn" style="margin: 20px 0 0; background: var(--accent);"><i class="fa-solid fa-phone"></i> ĐẶT PHÒNG NGAY</a>
-        </div>
-    </div>
+<a href="tel:+84908845284" class="call-btn" style="margin: 20px 0 0; background: var(--accent);"><i class="fa-solid fa-phone"></i> ĐẶT PHÒNG NGAY</a>
+
+<div class="ota-inline">
+<div class="left"><i class="fa-solid fa-hotel"></i> So sánh giá và đặt phòng</div>
+<div class="ota-links">
+<a href="https://www.agoda.com/your-hotel-link" target="_blank" class="ota-agoda">Agoda</a>
+<a href="https://www.traveloka.com/your-hotel-link" target="_blank" class="ota-traveloka">Traveloka</a>
+</div>
+</div>
+
+</div>
+</div>
 </div>
 <div class="modal-overlay" id="bankModal" onclick="closeBankIfOutside(event)">
-  <div class="bank-card">
-    <div class="close-bank" onclick="closeBank()">&times;</div>
-    <img src="qr-bank.jpg" alt="QR Ngân hàng">
-    <h4>CHUYỂN KHOẢN THANH TOÁN</h4>
-    <div class="bank-row"><span>Ngân hàng:</span><span>MBBANK</span></div>
-    <div class="bank-row"><span>Số tài khoản:</span><span id="bankNum" onclick="copyBank()"><i class="fa-regular fa-copy" style="margin-right: 5px;"></i> 0908845284</span></div>
-    <div class="bank-row"><span>Chủ TK:</span><span>NGUYEN THI SAM</span></div>
-    <p style="font-size: 0.85rem; color: #999; margin-top: 10px;">(Nhấn vào số tài khoản để sao chép)</p>
-  </div>
+<div class="bank-card">
+<div class="close-bank" onclick="closeBank()">×</div>
+<img src="qr-bank.jpg" alt="QR Ngân hàng">
+<h4>CHUYỂN KHOẢN THANH TOÁN</h4>
+<div class="bank-row"><span>Ngân hàng:</span><span>MBBANK</span></div>
+<div class="bank-row"><span>Số tài khoản:</span><span id="bankNum" onclick="copyBank()"><i class="fa-regular fa-copy" style="margin-right: 5px;"></i> 0908845284</span></div>
+<div class="bank-row"><span>Chủ TK:</span><span>NGUYEN THI SAM</span></div>
+<p style="font-size: 0.85rem; color: #999; margin-top: 10px;">(Nhấn vào số tài khoản để sao chép)</p>
+</div>
 </div>
 
 <div class="fixed-call">
-    <a href="tel:+84908845284"><i class="fa-solid fa-circle-phone-to-call"></i> GỌI ĐẶT PHÒNG (HOTLINE)</a>
+<a href="tel:+84908845284"><i class="fa-solid fa-circle-phone-to-call"></i> GỌI ĐẶT PHÒNG (HOTLINE)</a>
 </div>
 
 <script>
 // --- Chức năng Modal Chi Tiết Phòng ---
 function showRoom(title, img, desc, priceHour, priceOver, priceFull){
-  // Đổ dữ liệu vào Modal
-  document.getElementById('roomTitle').innerText = title;
-  document.getElementById('roomImg').src = img;
-  document.getElementById('roomDesc').innerText = desc;
-  document.getElementById('pHour').innerText = priceHour;
-  document.getElementById('pOver').innerText = priceOver;
-  document.getElementById('pFull').innerText = priceFull;
+// Đổ dữ liệu vào Modal
+document.getElementById('roomTitle').innerText = title;
+document.getElementById('roomImg').src = img;
+document.getElementById('roomDesc').innerText = desc;
+document.getElementById('pHour').innerText = priceHour;
+document.getElementById('pOver').innerText = priceOver;
+document.getElementById('pFull').innerText = priceFull;
 
-  // Hiển thị Modal và khóa cuộn body
-  document.getElementById('roomModal').style.display='block';
-  document.body.style.overflow='hidden';
+// Hiển thị Modal và khóa cuộn body
+document.getElementById('roomModal').style.display='block';
+document.body.style.overflow='hidden';
 }
 
 function closeRoom(){
-  document.getElementById('roomModal').style.display='none';
-  document.body.style.overflow=''; // Mở khóa cuộn body
+document.getElementById('roomModal').style.display='none';
+document.body.style.overflow=''; // Mở khóa cuộn body
 }
 
 // --- Chức năng Modal Ngân Hàng ---
 function openBank() {
-    document.getElementById('bankModal').classList.add('open');
+document.getElementById('bankModal').classList.add('open');
 }
 
 function closeBank(){
-  document.getElementById('bankModal').classList.remove('open');
+document.getElementById('bankModal').classList.remove('open');
 }
 
 function closeBankIfOutside(event){
-    if(event.target === document.getElementById('bankModal')) {
-        closeBank();
-    }
+if(event.target === document.getElementById('bankModal')) {
+closeBank();
+}
 }
 
 function copyBank(){
-  // Bỏ ký tự HTML và khoảng trắng thừa trước khi copy
-  const bankNumberElement = document.getElementById('bankNum');
-  const textToCopy = bankNumberElement.innerText.replace(' 0908845284', '0908845284').trim(); 
-  
-  navigator.clipboard.writeText(textToCopy);
-  alert('✅ Đã sao chép Số tài khoản: 0908845284');
+const bankNumberElement = document.getElementById('bankNum');
+const textToCopy = bankNumberElement.innerText.replace(' 0908845284', '0908845284').trim();
+
+navigator.clipboard.writeText(textToCopy);
+alert('✅ Đã sao chép Số tài khoản: 0908845284');
 }
 
 // --- Chức năng Chia Sẻ ---
 function shareCard() {
-    if (navigator.share) {
-        navigator.share({
-            title: 'Danh Thiếp Sâm Nguyễn Hotel',
-            text: 'Thông tin Khách sạn Sâm Nguyễn. Hỗ trợ đặt phòng 24/7!',
-            url: location.href,
-        })
-        .then(() => console.log('Chia sẻ thành công'))
-        .catch((error) => console.log('Lỗi chia sẻ', error));
-    } else {
-        // Fallback: Copy link
-        navigator.clipboard.writeText(location.href);
-        alert('Đã sao chép link danh thiếp! Bạn có thể dán vào tin nhắn để chia sẻ.');
-    }
+if (navigator.share) {
+navigator.share({
+title: 'Danh Thiếp Sâm Nguyễn Hotel',
+text: 'Thông tin Khách sạn Sâm Nguyễn. Hỗ trợ đặt phòng 24/7!',
+url: location.href,
+})
+.then(() => console.log('Chia sẻ thành công'))
+.catch((error) => console.log('Lỗi chia sẻ', error));
+} else {
+navigator.clipboard.writeText(location.href);
+alert('Đã sao chép link danh thiếp! Bạn có thể dán vào tin nhắn để chia sẻ.');
+}
 }
 
-// Thay thế icon WhatsApp bằng icon Zalo (font-awesome)
-document.addEventListener('DOMContentLoaded', () => {
-    const zaloIcon = document.querySelector('.icon-zalo i');
-    if (zaloIcon) {
-        zaloIcon.classList.remove('fa-whatsapp');
-        // Font Awesome 6.5.1 không có fa-zalo chính thức, nhưng có thể dùng mã tùy chỉnh hoặc thay bằng icon khác phù hợp.
-        // Tạm dùng fa-comment-dots hoặc đảm bảo đã nhúng thư viện có hỗ trợ fa-zalo.
-        // Giả sử fa-zalo có trong thư viện bạn dùng, nếu không, hãy đổi lại.
-        zaloIcon.classList.add('fa-zalo'); 
-    }
-});
+
 </script>
 </body>
 </html>

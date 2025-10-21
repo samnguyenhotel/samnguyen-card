@@ -102,10 +102,15 @@ body {
   padding:10px;
   border-radius:8px;
   font-weight:600;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.1s; /* Thêm transform */
 }
+/* Active/Hover cho Actions Row */
 .actions-row a:hover {
   background: #e3dec7;
+}
+.actions-row a:active {
+    background: #e3dec7;
+    transform: scale(0.98); /* Hiệu ứng nhấn trên di động */
 }
 
 /* --- Icon Grid (Mạng xã hội) --- */
@@ -121,15 +126,15 @@ body {
   width:50px;height:50px;border-radius:50%;display:flex;
   align-items:center;justify-content:center;margin:0 auto 6px;
   box-shadow:0 2px 8px rgba(0,0,0,0.08);font-size:1.8rem;
-  transition: transform 0.2s, box-shadow 0.2s; /* Cập nhật transition cho hover */
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-/* HIỆU ỨNG HOVER ĐƯỢC BỔ SUNG */
-.icon i:hover {
-    transform: translateY(-3px) scale(1.05);
+/* Hiệu ứng HOVER (PC) và ACTIVE (Mobile) */
+.icon i:hover, .icon i:active {
+    transform: translateY(-3px) scale(1.05); /* Hiệu ứng nhấc lên */
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 .icon i:active {
-  transform: scale(0.9);
+  transform: scale(0.9); /* Làm nhỏ hơn khi chạm để có phản hồi tức thì */
 }
 
 /* Màu cho các icon cụ thể */
@@ -163,16 +168,17 @@ body {
   overflow:hidden;
   box-shadow:0 4px 14px rgba(0,0,0,0.05);
   cursor:pointer;
-  transition:box-shadow 0.2s, transform 0.2s; /* Cập nhật: Thêm transform */
+  transition:box-shadow 0.2s, transform 0.2s;
   position: relative;
 }
-.room-card:hover {
+/* HIỆU ỨNG HOVER/ACTIVE CHO THẺ PHÒNG */
+.room-card:hover, .room-card:active {
   box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-  transform: translateY(-3px); /* Bổ sung: Nhấc thẻ lên nhẹ nhàng */
+  transform: translateY(-3px); /* Nhấc thẻ lên nhẹ nhàng */
 }
-/* === BỔ SUNG HIỆU ỨNG CHO OVERLAY KHI HOVER === */
-.room-card:hover .room-overlay {
-    background: rgba(0, 0, 0, 0.35); /* Làm tối overlay hơn 10% */
+/* HIỆU ỨNG CHO OVERLAY KHI HOVER/ACTIVE */
+.room-card:hover .room-overlay, .room-card:active .room-overlay {
+    background: rgba(0, 0, 0, 0.35); /* Làm tối overlay hơn */
 }
 .room-thumb {height:140px;background-size:cover;background-position:center;} /* chiều cao ảnh phòng*/
 
@@ -193,6 +199,7 @@ body {
   opacity: 1;
   font-size: 0.9rem;
   font-weight: 500;
+  transition: background 0.2s;
 }
 
 .overlay-title {
@@ -292,17 +299,17 @@ body {
   object-fit: cover;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   cursor: pointer;
-  transition: transform 0.2s, border 0.2s, box-shadow 0.2s; /* Cập nhật transition */
+  transition: transform 0.2s, border 0.2s, box-shadow 0.2s;
   border: 2px solid transparent; /* Viền trong suốt ban đầu */
 }
-/* HIỆU ỨNG HOVER ĐƯỢC BỔ SUNG */
-.gallery-item:hover {
+/* HIỆU ỨNG HOVER/ACTIVE ĐƯỢC BỔ SUNG */
+.gallery-item:hover, .gallery-item:active {
     border: 2px solid var(--primary); 
     transform: scale(1.02);
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 .gallery-item:active {
-  transform: scale(0.95);
+  transform: scale(0.95); /* Kích hoạt khi chạm */
 }
 /* === KẾT THÚC CSS CHO GALLERY MỚI === */
 
@@ -334,20 +341,22 @@ body {
   border-radius:10px;
   font-weight:700;
   text-decoration:none;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.1s; /* Thêm transform */
   font-size: 0.95rem;
 }
 .modal-call-btn {
   background:var(--accent);
 }
-.modal-call-btn:hover {
+.modal-call-btn:hover, .modal-call-btn:active {
   background: #102e26;
+  transform: scale(0.98);
 }
 .modal-zalo-btn {
   background:var(--accent);
 }
-.modal-zalo-btn:hover {
+.modal-zalo-btn:hover, .modal-zalo-btn:active {
   background: #102e26;
+  transform: scale(0.98);
 }
 
 /* Đảm bảo OTA links không bị dính vào footer mới (thay thế .ota-inline) */
@@ -373,9 +382,10 @@ body {
   border-radius:6px;
   font-weight:700;
   font-size: 0.9rem;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, transform 0.1s; /* Thêm transform */
 }
 .ota-links a:hover {opacity: 0.8;}
+.ota-links a:active {opacity: 0.8; transform: scale(0.95);}
 .ota-agoda {background:#f4ebff;color:#7a3eff;}
 .ota-traveloka {background:#e8f4ff;color:#007bff;}
 
@@ -404,19 +414,21 @@ body {
   border-radius:10px;
   font-weight:700;
   text-decoration:none;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.1s; /* Thêm transform */
 }
 .fixed-call {
   background:var(--accent); /* Xanh rêu đậm */
 }
-.fixed-call:hover {
+.fixed-call:hover, .fixed-call:active {
   background: #102e26;
+  transform: scale(0.98);
 }
 .fixed-zalo {
   background:var(--accent); /* Xanh Zalo */
 }
-.fixed-zalo:hover {
+.fixed-zalo:hover, .fixed-zalo:active {
   background: #102e26;
+  transform: scale(0.98);
 }
 
 /* --- Modal Ngân hàng --- */
@@ -461,13 +473,13 @@ body {
 .bank-row:last-child{border-bottom:none;}
 .bank-row span:last-child {
     font-weight: 500;
-    transition: color 0.2s; /* Thêm transition cho màu */
+    transition: color 0.2s;
 }
 #bankNum {
-    cursor: pointer; /* Bổ sung con trỏ pointer */
+    cursor: pointer;
 }
-/* HIỆU ỨNG HOVER ĐƯỢC BỔ SUNG */
-#bankNum:hover {
+/* HIỆU ỨNG HOVER/ACTIVE CHO SỐ TÀI KHOẢN */
+#bankNum:hover, #bankNum:active {
     color: var(--primary); 
 }
 .close-bank {

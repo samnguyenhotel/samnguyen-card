@@ -11,23 +11,23 @@
 /* CSS VARIABLES & BASE */
 /* ========================================= */
 :root{
- --primary:#DAA520; --accent:#194639; --light:#f7f3e8; --text:#333; --danger:#e53935;
- /* FAB Variables */
- --main-color: #e53935;
- --fab-size: 65px;
- --child-fab-size: 55px;
- --spacing: 20px;
+--primary:#DAA520; --accent:#194639; --light:#f7f3e8; --text:#333; --danger:#e53935;
+/* FAB Variables */
+--main-color: #e53935;
+--fab-size: 65px;
+--child-fab-size: 55px;
+--spacing: 20px;
 }
 *{box-sizing:border-box}
 body{
- font-family:'Roboto',sans-serif;
- background:#f4f4f4;
- margin:0;
- display:flex;
- justify-content:center;
- min-height:100vh;
- padding:20px 0 100px;
- color:var(--text);
+font-family:'Roboto',sans-serif;
+background:#f4f4f4;
+margin:0;
+display:flex;
+justify-content:center;
+min-height:100vh;
+padding:20px 0 100px;
+color:var(--text);
 }
 .card{width:100%;max-width:450px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.08);position:relative;}
 .hero{height:170px;background:url('banner.jpg')center/cover no-repeat}
@@ -65,17 +65,61 @@ body{
 .overlay-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0}
 .overlay-price{font-weight:700}
 
-/* video */
+/* video & promo */
 .video-section{padding:0 18px 18px}
 .video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
 .video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+
+/* New Promo Section (Check SĐT) */
+#promoCheck {
+  background: #f7f3e8; /* Light BG */
+  border: 1px solid var(--primary);
+  padding: 15px 18px;
+  margin: 0 18px 18px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+#promoCheck h4 {
+  color: var(--accent);
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+#phoneInput {
+  padding: 10px;
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 6px 0 0 6px;
+  font-size: 1rem;
+  outline: none;
+}
+#checkPromoBtn {
+  padding: 10px 15px;
+  width: 30%;
+  background: var(--danger);
+  color: white;
+  border: 1px solid var(--danger);
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.2s;
+}
+#checkPromoBtn:hover {
+  background: #c62828;
+}
+#promoResult {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #008000;
+}
 
 /* modal full */
 .modal-full{display:none;position:fixed;inset:0;z-index:1100;background:#fff;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .modal-inner{max-width:450px;margin:0 auto;background:#fff;min-height:100%;padding-bottom: 80px;}
 .close-modal{position:fixed;top:12px;right:12px;width:40px;height:40px;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.6rem;cursor:pointer;z-index:1200;box-shadow:0 6px 18px rgba(0,0,0,.25)}
 .modal-header-img{width:100%;height:240px;object-fit:cover}
-.modal-content{padding:18px; padding-top: 0;} /* Đã bỏ padding top để Gallery có thể dính vào ảnh chính */
+.modal-content{padding:18px; padding-top: 0;} 
 .modal-content h4{margin:0 0 10px;color:var(--accent);font-size:1.25rem;border-bottom:2px solid var(--primary);padding-bottom:8px}
 .modal-content p{color:#555;margin:0 0 12px}
 
@@ -96,10 +140,6 @@ body{
 .price-row .val{flex:1;color:#e54c4c;font-weight:700;text-align:right}
 .price-note{font-size:.82rem;color:#888;text-align:center;padding:8px 10px;background:#fff8f0}
 
-/* yellow btns inside modal */
-.btn-yellow{display:block;text-decoration:none;text-align:center;font-weight:700;background:var(--light);color:var(--text);padding:12px;border-radius:8px;margin-top:12px;transition:.18s}
-.btn-yellow:hover{background:#e3dec7}
-
 /* ota links area (kept outside modal) */
 .ota-links-container{padding:12px;padding-bottom:0}
 .ota-inline{background:var(--light);padding:12px;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.05);display:flex;justify-content:space-between;align-items:center}
@@ -108,138 +148,138 @@ body{
 .ota-traveloka{background:#e8f4ff;color:#007bff}
 
 /* ========================================= */
-/* CSS ROOM GALLERY (ĐÃ THÊM) */
+/* CSS ROOM GALLERY (Unchanged) */
 /* ========================================= */
 #roomGallery {
-  display: flex; 
-  gap: 8px; 
-  overflow-x: auto; /* Cho phép cuộn ngang */
-  padding: 10px 18px 18px; /* Đảm bảo có padding xung quanh */
-  background: #f9f9f9; /* Nền nhẹ cho khu vực gallery */
-  border-bottom: 1px solid #eee;
+ display: flex;
+ gap: 8px;
+ overflow-x: auto; 
+ padding: 10px 18px 18px; 
+ background: #f9f9f9; 
+ border-bottom: 1px solid #eee;
 }
 #roomGallery .gallery-item {
-  flex-shrink: 0; /* Ngăn ảnh co lại */
-  width: 100px;
-  height: 70px;
-  object-fit: cover;
-  border-radius: 6px;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: all 0.2s;
+ flex-shrink: 0; 
+ width: 100px;
+ height: 70px;
+ object-fit: cover;
+ border-radius: 6px;
+ cursor: pointer;
+ border: 2px solid transparent;
+ transition: all 0.2s;
 }
 #roomGallery .gallery-item:hover {
-  border-color: var(--primary); /* Highlight khi hover */
-  transform: scale(1.05);
+ border-color: var(--primary); 
+ transform: scale(1.05);
 }
 
 /* ========================================= */
-/* CSS HOTLINE PHONE RING */
+/* CSS HOTLINE PHONE RING (Unchanged) */
 /* ========================================= */
 .hotline-phone-ring-wrap {
-  position: fixed;
-  bottom: 10px; 
-  right: 194px; /* Vị trí Desktop */
-  z-index: 999999;
+ position: fixed;
+ bottom: 10px;
+ right: 194px; 
+ z-index: 999999;
 }
 .hotline-phone-ring {
-  position: relative;
-  visibility: visible;
-  background-color: transparent;
-  width: 110px;
-  height: 110px;
-  cursor: pointer;
-  z-index: 11;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  transition: visibility .5s;
-  left: 0;
-  bottom: 0;
-  display: block;
+ position: relative;
+ visibility: visible;
+ background-color: transparent;
+ width: 110px;
+ height: 110px;
+ cursor: pointer;
+ z-index: 11;
+ -webkit-backface-visibility: hidden;
+ -webkit-transform: translateZ(0);
+ transition: visibility .5s;
+ left: 0;
+ bottom: 0;
+ display: block;
 }
 .hotline-phone-ring-circle {
-  width: 85px; height: 85px; top: 10px; left: 10px; position: absolute;
-  background-color: transparent; border-radius: 100%; border: 2px solid #e60808;
-  -webkit-animation: phonering-alo-circle-anim 1.2s infinite ease-in-out;
-  animation: phonering-alo-circle-anim 1.2s infinite ease-in-out;
-  transition: all .5s; opacity: 0.5;
+ width: 85px; height: 85px; top: 10px; left: 10px; position: absolute;
+ background-color: transparent; border-radius: 100%; border: 2px solid #e60808;
+ -webkit-animation: phonering-alo-circle-anim 1.2s infinite ease-in-out;
+ animation: phonering-alo-circle-anim 1.2s infinite ease-in-out;
+ transition: all .5s; opacity: 0.5;
 }
 .hotline-phone-ring-circle-fill {
-  width: 55px; height: 55px; top: 25px; left: 25px; position: absolute;
-  background-color: rgba(230, 8, 8, 0.7); border-radius: 100%; border: 2px solid transparent;
-  -webkit-animation: phonering-alo-circle-fill-anim 2.3s infinite ease-in-out;
-  animation: phonering-alo-circle-fill-anim 2.3s infinite ease-in-out;
-  transition: all .5s;
+ width: 55px; height: 55px; top: 25px; left: 25px; position: absolute;
+ background-color: rgba(230, 8, 8, 0.7); border-radius: 100%; border: 2px solid transparent;
+ -webkit-animation: phonering-alo-circle-fill-anim 2.3s infinite ease-in-out;
+ animation: phonering-alo-circle-fill-anim 2.3s infinite ease-in-out;
+ transition: all .5s;
 }
 .hotline-phone-ring-img-circle {
-  background-color: #e60808; width: 33px; height: 33px; top: 37px; left: 37px;
-  position: absolute; background-size: 20px; border-radius: 100%; border: 2px solid transparent;
-  -webkit-animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
-  animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
-  display: flex; align-items: center; justify-content: center;
+ background-color: #e60808; width: 33px; height: 33px; top: 37px; left: 37px;
+ position: absolute; background-size: 20px; border-radius: 100%; border: 2px solid transparent;
+ -webkit-animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
+ animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
+ display: flex; align-items: center; justify-content: center;
 }
 .hotline-bar {
-  position: absolute; background: rgba(230, 8, 8, 0.75);
-  height: 40px; width: 160px; line-height: 40px; border-radius: 50px !important;
-  padding: 0 10px; cursor: pointer; transition: all 0.8s; z-index: 9;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.1);
-  left: 33px; bottom: 37px;
+ position: absolute; background: rgba(230, 8, 8, 0.75);
+ height: 40px; width: 160px; line-height: 40px; border-radius: 50px !important;
+ padding: 0 10px; cursor: pointer; transition: all 0.8s; z-index: 9;
+ box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.1);
+ left: 33px; bottom: 37px;
 }
 .hotline-bar > a {
-  color: #fff; text-decoration: none; font-size: 15px; font-weight: bold;
-  text-indent: 35px; display: block; letter-spacing: 1px; line-height: 40px; font-family: Arial;
+ color: #fff; text-decoration: none; font-size: 15px; font-weight: bold;
+ text-indent: 35px; display: block; letter-spacing: 1px; line-height: 40px; font-family: Arial;
 }
 
 
 /* ========================================= */
-/* CSS FLOATING ACTION BUTTONS (FAB) - CLICK LOGIC */
+/* CSS FLOATING ACTION BUTTONS (FAB) (Unchanged) */
 /* ========================================= */
 .fab {
-  position: fixed; right: var(--spacing);
-  display: flex; justify-content: center; align-items: center;
-  cursor: pointer; border-radius: 50%;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+ position: fixed; right: var(--spacing);
+ display: flex; justify-content: center; align-items: center;
+ cursor: pointer; border-radius: 50%;
+ box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+ transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* Nút Chính */
 #main-fab {
-  bottom: var(--spacing); z-index: 999999;
-  width: var(--fab-size); height: var(--fab-size);
-  background-color: var(--main-color);
-  border: 4px solid #ffffff;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+ bottom: var(--spacing); z-index: 999999;
+ width: var(--fab-size); height: var(--fab-size);
+ background-color: var(--main-color);
+ border: 4px solid #ffffff;
+ box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 #main-fab .img-circle { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 
 /* Hiệu ứng xoay và tắt rung khi active (MỞ) */
 #main-fab.active {
-  transform: rotate(45deg);
-  animation: none;
+ transform: rotate(45deg);
+ animation: none;
 }
 /* Hiệu ứng rung cho nút chính */
 .call-animation { animation: pulse-ring 2s infinite, shake-subtle 1s infinite 2s; }
 
 /* Khung chứa nút con */
 .inner-fabs {
-  position: fixed; right: var(--spacing);
-  bottom: calc(var(--fab-size) + var(--spacing) + 10px);
-  z-index: 999999; display: flex; flex-direction: column-reverse; gap: 10px;
-  /* Mặc định ẨN */
-  opacity: 0; visibility: hidden; transform: translateY(20px);
-  transition: all 0.4s ease-out;
+ position: fixed; right: var(--spacing);
+ bottom: calc(var(--fab-size) + var(--spacing) + 10px);
+ z-index: 999999; display: flex; flex-direction: column-reverse; gap: 10px;
+ /* Mặc định ẨN */
+ opacity: 0; visibility: hidden; transform: translateY(20px);
+ transition: all 0.4s ease-out;
 }
 
 /* HIỂN THỊ CHỈ KHI CÓ CLASS .active (CLICK) */
 .inner-fabs.active {
-  opacity: 1; visibility: visible; transform: translateY(0);
+ opacity: 1; visibility: visible; transform: translateY(0);
 }
 
 /* Nút Con */
 .inner-fabs .fab {
-  position: relative; right: 0; bottom: 0;
-  width: var(--child-fab-size); height: var(--child-fab-size);
-  background-color: #ffffff; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+ position: relative; right: 0; bottom: 0;
+ width: var(--child-fab-size); height: var(--child-fab-size);
+ background-color: #ffffff; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 .inner-fabs .inner-fab-icon { width: 95%; height: 95%; object-fit: contain; }
 .inner-fabs .fab:hover { transform: scale(1.1); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); }
@@ -247,26 +287,160 @@ body{
 /* Tooltip */
 .fab[data-tooltip] { position: relative; }
 .fab[data-tooltip]::before {
-    content: attr(data-tooltip); position: absolute; right: calc(100% + 15px); top: 50%;
-    transform: translateY(-50%); background-color: #333; color: white; padding: 6px 12px;
-    border-radius: 4px; white-space: nowrap; font-size: 14px; opacity: 0; visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease; z-index: 1001;
+  content: attr(data-tooltip); position: absolute; right: calc(100% + 15px); top: 50%;
+  transform: translateY(-50%); background-color: #333; color: white; padding: 6px 12px;
+  border-radius: 4px; white-space: nowrap; font-size: 14px; opacity: 0; visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease; z-index: 1001;
 }
 .fab[data-tooltip]:hover::before { opacity: 1; visibility: visible; }
 
 /* ========================================= */
-/* KEYFRAMES (ANIMATION) */
+/* CSS ACCORDION (cho #roomModal) */
+/* ========================================= */
+.accordion-wrapper {
+    padding: 18px 0; /* Khoảng cách xung quanh khu vực accordion */
+}
+.accordion-item {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+}
+.accordion-header {
+  background: var(--light);
+  color: var(--accent);
+  padding: 12px 15px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  position: relative;
+  transition: background 0.2s;
+}
+.accordion-header::after {
+  content: '\25B6'; 
+  font-size: 14px;
+  color: var(--primary);
+  float: right;
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
+}
+.accordion-header.active::after {
+  transform: rotate(90deg); 
+}
+.accordion-content {
+  padding: 0 15px;
+  background-color: white;
+  max-height: 0; 
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+.accordion-content.active {
+    padding: 10px 15px;
+}
+.accordion-content h4 {
+  font-size: 1rem;
+  color: var(--text);
+  margin: 10px 0 5px;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.accordion-content ul {
+  margin: 5px 0 10px 15px;
+  padding: 0;
+  list-style-type: none;
+}
+.accordion-content li {
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Thêm style cho bảng đền bù trong accordion */
+.accordion-content .price-table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+.accordion-content .price-table th, .accordion-content .price-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+.accordion-content .price-table th {
+    background: var(--light);
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* Style cho list chính sách giá khác */
+.price-note-list {
+    font-size: 0.95rem; /* Tăng cỡ chữ lên một chút cho dễ đọc */
+    color: #555;
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 0;
+    margin-top: 10px;
+}
+.price-note-list li {
+    color: #555;
+    margin-bottom: 6px;
+}
+
+/* CSS cho Accordion phụ (Lồng nhau) */
+.sub-accordion-header {
+    background: #fdfdfd; /* Nền nhạt hơn so với nền chính */
+    color: #4a4a4a;
+    padding: 10px 10px 10px 0;
+    width: 100%;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    position: relative;
+    border-top: 1px solid #f0f0f0;
+    margin-top: 10px;
+}
+.sub-accordion-header::after {
+    content: '\25B6'; 
+    font-size: 12px;
+    color: var(--primary);
+    float: right;
+    transition: transform 0.3s ease;
+    transform: rotate(0deg);
+}
+.sub-accordion-header.active::after {
+    transform: rotate(90deg); 
+}
+.sub-accordion-content {
+    padding: 0;
+    background-color: white;
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.sub-accordion-content.active {
+    padding-bottom: 5px;
+}
+
+
+/* ========================================= */
+/* KEYFRAMES (ANIMATION) (Unchanged) */
 /* ========================================= */
 /* Animation rung/vòng sáng cho nút chính */
 @keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); }
-  80% { box-shadow: 0 0 0 20px rgba(229, 57, 53, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(229, 57, 53, 0); }
+ 0% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); }
+ 80% { box-shadow: 0 0 0 20px rgba(229, 57, 53, 0); }
+ 100% { box-shadow: 0 0 0 0 rgba(229, 57, 53, 0); }
 }
 @keyframes shake-subtle {
-  0%, 100% { transform: rotate(0deg); }
-  10%, 30%, 50%, 70%, 90% { transform: rotate(-5deg); }
-  20%, 40%, 60%, 80% { transform: rotate(5deg); }
+ 0%, 100% { transform: rotate(0deg); }
+ 10%, 30%, 50%, 70%, 90% { transform: rotate(-5deg); }
+ 20%, 40%, 60%, 80% { transform: rotate(5deg); }
 }
 
 /* Keyframes Hotline Ring */
@@ -279,22 +453,22 @@ body{
 
 
 /* ========================================= */
-/* MEDIA QUERY (MOBILE OPTIMIZATION) */
+/* MEDIA QUERY (MOBILE OPTIMIZATION) (Unchanged) */
 /* ========================================= */
 @media (max-width: 768px) {
-  /* Điều chỉnh Biến CSS cho Mobile */
-  :root {
-    --spacing: 15px;
-    --fab-size: 65px;
-    --child-fab-size: 45px;
-  }
-  .hotline-bar { display: none; }
-  .hotline-phone-ring-wrap {
-    bottom: -15px; 
-    /* Dịch sang trái để tránh FAB */
-    right: calc(var(--fab-size) + var(--spacing) + 0px);
-  }
-  .fab[data-tooltip]::before { display: none !important; }
+ /* Điều chỉnh Biến CSS cho Mobile */
+ :root {
+  --spacing: 15px;
+  --fab-size: 65px;
+  --child-fab-size: 45px;
+ }
+ .hotline-bar { display: none; }
+ .hotline-phone-ring-wrap {
+  bottom: -15px;
+  /* Dịch sang trái để tránh FAB */
+  right: calc(var(--fab-size) + var(--spacing) + 0px);
+ }
+ .fab[data-tooltip]::before { display: none !important; }
 }
 
 @media(max-width:420px){.logo{width:140px;height:140px}.modal-header-img{height:200px}}
@@ -302,338 +476,529 @@ body{
 </head>
 <body>
 <div class="card">
- <div class="hero"></div>
+<div class="hero"></div>
 
- <div class="profile">
-  <div style="position:relative;display:inline-block">
-   <img src="logo.jpg" alt="Logo Sâm Nguyễn Hotel" class="logo">
-   <div class="qr-card" title="Quét mã để truy cập E-Card"></div>
+<div class="profile">
+ <div style="position:relative;display:inline-block">
+ <img src="logo.jpg" alt="Logo Sâm Nguyễn Hotel" class="logo">
+ <div class="qr-card" title="Quét mã để truy cập E-Card"></div>
+ </div>
+ <div class="hotel-name">SÂM NGUYỄN HOTEL</div>
+ <div class="hotel-sub">Hỗ trợ trực tuyến 24/7</div>
+</div>
+
+<div class="actions-row">
+ <a href="javascript:void(0)" onclick="shareCard()"><i class="fa-solid fa-share-nodes"></i> Chia sẻ</a>
+ <a href="SamNguyenHotel.vcf" download><i class="fa-solid fa-address-book"></i> Lưu danh bạ</a>
+</div>
+
+<div class="icon-grid">
+ <a class="icon icon-fb" href="https://facebook.com/SamNguyenHotel" target="_blank"><i class="fa-brands fa-facebook-f"></i><span>Fanpage</span></a>
+ <a class="icon icon-yt" href="https://www.youtube.com/@samnguyen8233" target="_blank"><i class="fa-brands fa-youtube"></i><span>YouTube</span></a>
+ <a class="icon icon-map" href="https://maps.app.goo.gl/YPE9Wz6H9dZZ5LsM6" target="_blank"><i class="fa-solid fa-map-location-dot"></i><span>Vị trí</span></a>
+ <a class="icon icon-review" href="https://g.page/r/CbI3Hvv079jaEAI/review" target="_blank"><i class="fa-solid fa-star"></i><span>Đánh giá</span></a>
+</div>
+
+<div class="icon-grid" style="grid-template-columns:repeat(2,1fr);">
+ <a class="icon icon-bank" href="javascript:void(0)" onclick="openBank()"><i class="fa-solid fa-building-columns"></i><span>Ngân hàng</span></a>
+ <a class="icon icon-mail" href="mailto:samnguyen.hotel@gmail.com"><i class="fa-solid fa-envelope"></i><span>Mail</span></a>
+</div>
+
+<div class="rooms">
+ <h3>DANH SÁCH PHÒNG</h3>
+ <div class="room-list">
+ <div class="room-card" onclick="showRoom('Phòng tiêu chuẩn - 1 giường','room-image-1.jpg','Không gian nhỏ gọn, riêng tư và yên tĩnh, mang đến cảm giác thư thái sau một ngày dài.','250.000đ','350.000đ','500.000đ',['Wifi miễn phí','Máy lạnh','Smart TV','Nước nóng','Vệ sinh riêng','Nước uống'])">
+  <div class="room-thumb" style="background-image:url('room-image-1.jpg')"></div>
+  <div class="room-overlay"><p class="overlay-title">Phòng 1 Giường</p><div class="overlay-price">Từ 250.000đ / 3h</div></div>
+ </div>
+
+ <div class="room-card" onclick="showRoom('Phòng tiêu chuẩn - 2 giường','room-image-2.jpg','View núi và biển xa, phòng 2 giường tiện nghi và thoải mái.','350.000đ','580.000đ','750.000đ',['Wifi miễn phí','Máy lạnh','Smart TV','Nước nóng','Vệ sinh riêng','Phòng gia đình'])">
+  <div class="room-thumb" style="background-image:url('room-image-2.jpg')"></div>
+  <div class="room-overlay"><p class="overlay-title">Phòng 2 Giường</p><div class="overlay-price">Từ 350.000đ / 3h</div></div>
+ </div>
+
+ <div class="room-card" onclick="showRoom('Phòng tiêu chuẩn - 3 giường','room-image-3.jpg','Phòng thoáng mát, đầy đủ tiện nghi, thích hợp cho nhóm bạn hoặc gia đình.','400.000đ','650.000đ','850.000đ',['Wifi miễn phí','Máy lạnh','Smart TV','Khu vực chờ','Nước, khăn lạnh','Trà/Cafe'])">
+  <div class="room-thumb" style="background-image:url('room-image-3.jpg')"></div>
+  <div class="room-overlay"><p class="overlay-title">Phòng 3 Giường</p><div class="overlay-price">Từ 400.000đ / 3h</div></div>
+ </div>
+
+ <div class="room-card" onclick="showRoom('VIP Luxury','room-image-vip.jpg','Không gian tinh tế với bồn tắm massage, nội thất cao cấp và Netflix.','500.000đ','700.000đ','900.000đ',['Phòng VIP','Bồn tắm','TV Lớn','Nội thất cao cấp','Giường King','Máy lọc không khí'])">
+  <div class="room-thumb" style="background-image:url('room-image-vip.jpg')"></div>
+  <div class="room-overlay"><p class="overlay-title">VIP Luxury</p><div class="overlay-price">Từ 500.000đ / 3h</div></div>
+ </div>
+
+ <div class="room-card" onclick="showRoom('Căn Hộ mini','room-image-apt.jpg','Căn hộ mini đầy đủ tiện nghi như ở nhà, phù hợp khách công tác hoặc lưu trú dài ngày.','500.000đ','750.000đ','950.000đ',['Bếp mini','Phòng khách','Tủ lạnh','Máy giặt','Lối đi riêng','Thuê dài ngày'])">
+  <div class="room-thumb" style="background-image:url('room-image-apt.jpg')"></div>
+  <div class="room-overlay"><p class="overlay-title">Căn Hộ Mini</p><div class="overlay-price">Từ 500.000đ / 3h</div></div>
+ </div>
+ </div>
+</div>
+
+<div class="video-section">
+ <h4 style="margin:0 18px 8px;color:var(--accent)">Video Giới Thiệu</h4>
+ <div class="video-wrap" style="margin:0 18px 18px;">
+ <iframe src="https://www.youtube.com/embed/0kTsCnvuG-I" allowfullscreen></iframe>
+ 
+ </div>
+</div>
+
+ <div id="promoCheck">
+  <h4>🎁 NHẬN ƯU ĐÃI DÀNH RIÊNG CHO BẠN</h4>
+  <div style="display: flex;">
+   <input type="tel" id="phoneInput" placeholder="Nhập số điện thoại (10 số)" maxlength="10" inputmode="numeric">
+   <button id="checkPromoBtn" onclick="checkPromo()">KIỂM TRA</button>
   </div>
-  <div class="hotel-name">SÂM NGUYỄN HOTEL</div>
-  <div class="hotel-sub">Hỗ trợ trực tuyến 24/7</div>
+  <div id="promoResult"></div>
  </div>
-
- <div class="actions-row">
-  <a href="javascript:void(0)" onclick="shareCard()"><i class="fa-solid fa-share-nodes"></i> Chia sẻ</a>
-  <a href="SamNguyenHotel.vcf" download><i class="fa-solid fa-address-book"></i> Lưu danh bạ</a>
-  
- </div>
-
- <div class="icon-grid">
-  <a class="icon icon-fb" href="https://facebook.com/SamNguyenHotel" target="_blank"><i class="fa-brands fa-facebook-f"></i><span>Fanpage</span></a>
-  <a class="icon icon-yt" href="https://www.youtube.com/@samnguyen8233" target="_blank"><i class="fa-brands fa-youtube"></i><span>YouTube</span></a>
-  <a class="icon icon-map" href="https://maps.app.goo.gl/YPE9Wz6H9dZZ5LsM6" target="_blank"><i class="fa-solid fa-map-location-dot"></i><span>Vị trí</span></a>
-  <a class="icon icon-review" href="https://g.page/r/CbI3Hvv079jaEAI/review" target="_blank"><i class="fa-solid fa-star"></i><span>Đánh giá</span></a>
- </div>
-
- <div class="icon-grid" style="grid-template-columns:repeat(2,1fr);">
-  <a class="icon icon-bank" href="javascript:void(0)" onclick="openBank()"><i class="fa-solid fa-building-columns"></i><span>Ngân hàng</span></a>
-  <a class="icon icon-mail" href="mailto:samnguyen.hotel@gmail.com"><i class="fa-solid fa-envelope"></i><span>Mail</span></a>
- </div>
-
- <div class="rooms">
-  <h3>DANH SÁCH PHÒNG</h3>
-  <div class="room-list">
-   <div class="room-card" onclick="showRoom('Phòng tiêu chuẩn - 1 giường','room-image-1.jpg','Không gian nhỏ gọn, riêng tư và yên tĩnh, mang đến cảm giác thư thái sau một ngày dài.','250.000đ','350.000đ','500.000đ',['Wifi miễn phí','Máy lạnh','Smart TV','Nước nóng','Vệ sinh riêng','Nước uống'])">
-    <div class="room-thumb" style="background-image:url('room-image-1.jpg')"></div>
-    <div class="room-overlay"><p class="overlay-title">Phòng 1 Giường</p><div class="overlay-price">Từ 250.000đ / 3h</div></div>
-   </div>
-
-   <div class="room-card" onclick="showRoom('Phòng tiêu chuẩn - 2 giường','room-image-2.jpg','View núi và biển xa, phòng 2 giường tiện nghi và thoải mái.','350.000đ','580.000đ','750.000đ',['Wifi miễn phí','Máy lạnh','Smart TV','Nước nóng','Vệ sinh riêng','Phòng gia đình'])">
-    <div class="room-thumb" style="background-image:url('room-image-2.jpg')"></div>
-    <div class="room-overlay"><p class="overlay-title">Phòng 2 Giường</p><div class="overlay-price">Từ 350.000đ / 3h</div></div>
-   </div>
-
-   <div class="room-card" onclick="showRoom('Phòng tiêu chuẩn - 3 giường','room-image-3.jpg','Phòng thoáng mát, đầy đủ tiện nghi, thích hợp cho nhóm bạn hoặc gia đình.','400.000đ','650.000đ','850.000đ',['Wifi miễn phí','Máy lạnh','Smart TV','Khu vực chờ','Nước, khăn lạnh','Trà/Cafe'])">
-    <div class="room-thumb" style="background-image:url('room-image-3.jpg')"></div>
-    <div class="room-overlay"><p class="overlay-title">Phòng 3 Giường</p><div class="overlay-price">Từ 400.000đ / 3h</div></div>
-   </div>
-
-   <div class="room-card" onclick="showRoom('VIP Luxury','room-image-vip.jpg','Không gian tinh tế với bồn tắm massage, nội thất cao cấp và Netflix.','500.000đ','700.000đ','900.000đ',['Phòng VIP','Bồn tắm','TV Lớn','Nội thất cao cấp','Giường King','Máy lọc không khí'])">
-    <div class="room-thumb" style="background-image:url('room-image-vip.jpg')"></div>
-    <div class="room-overlay"><p class="overlay-title">VIP Luxury</p><div class="overlay-price">Từ 500.000đ / 3h</div></div>
-   </div>
-
-   <div class="room-card" onclick="showRoom('Căn Hộ mini','room-image-apt.jpg','Căn hộ mini đầy đủ tiện nghi như ở nhà, phù hợp khách công tác hoặc lưu trú dài ngày.','500.000đ','750.000đ','950.000đ',['Bếp mini','Phòng khách','Tủ lạnh','Máy giặt','Lối đi riêng','Thuê dài ngày'])">
-    <div class="room-thumb" style="background-image:url('room-image-apt.jpg')"></div>
-    <div class="room-overlay"><p class="overlay-title">Căn Hộ Mini</p><div class="overlay-price">Từ 500.000đ / 3h</div></div>
-   </div>
-  </div>
- </div>
-
- <div class="video-section">
-  <h4 style="margin:0 18px 8px;color:var(--accent)">Video Giới Thiệu</h4>
-  <div class="video-wrap" style="margin:0 18px 18px;">
-   <iframe src="https://www.youtube.com/embed/0kTsCnvuG-I" allowfullscreen></iframe>
-   
-  </div>
- </div>
-
  <div style="height:12px"></div>
 </div>
 
 <div class="modal-full" id="roomModal" aria-hidden="true">
- <div class="close-modal" onclick="closeRoom()">×</div>
- <div class="modal-inner">
-  <img id="roomImg" class="modal-header-img" src="" alt="">
-      <div id="roomGallery"></div>
+<div class="close-modal" onclick="closeRoom()">×</div>
+<div class="modal-inner">
+ <img id="roomImg" class="modal-header-img" src="" alt="">
+   <div id="roomGallery"></div>
 
-  <div class="modal-content">
-   <h4 id="roomTitle"></h4>
-   <p id="roomDesc"></p>
+ <div class="modal-content">
+ <h4 id="roomTitle"></h4>
+ <p id="roomDesc"></p>
 
-   <div class="amenities-section" id="amenitiesSection" style="display:block">
-    <h5><i class="fa-solid fa-hand-holding-box" style="margin-right:8px"></i> Tiện nghi kèm theo</h5>
-    <div class="amenities-grid" id="roomAmenities"></div>
-   </div>
+ <div class="amenities-section" id="amenitiesSection" style="display:block">
+  <h5><i class="fa-solid fa-hand-holding-box" style="margin-right:8px"></i> Tiện nghi kèm theo</h5>
+  <div class="amenities-grid" id="roomAmenities"></div>
+ </div>
 
-   <div class="price-table">
-    <h5>BẢNG GIÁ CHI TIẾT</h5>
-    <div class="price-row"><div class="label">Thuê giờ</div><div class="col">3 giờ đầu</div><div class="val" id="pHour"></div></div>
-    <div class="price-row"><div class="label">Qua đêm</div><div class="col">21:00 - 08:00</div><div class="val" id="pOver"></div></div>
+ <div class="price-table">
+  <h5>BẢNG GIÁ NIÊM YẾT (CƠ BẢN)</h5>
+  <div class="price-row"><div class="label">Thuê giờ</div><div class="col">3 giờ đầu</div><div class="val" id="pHour"></div></div>
     <div class="price-row"><div class="label">Trọn ngày</div><div class="col">14:00 - 12:00</div><div class="val" id="pFull"></div></div>
-    <div class="price-note">* Giá căn bản để tham khảo, liên hệ lễ tân để được báo giá chính xác.</div>
-   </div>
-
-   <a class="btn-yellow" href="javascript:void(0)" onclick="openGuide()"><i class="fa-solid fa-book-open" style="margin-right:8px"></i> Hướng dẫn đặt phòng - Hủy đặt</a>
-   <a class="btn-yellow" href="javascript:void(0)" onclick="openRules()"><i class="fa-solid fa-gavel" style="margin-right:8px"></i> Nội quy & Quy định khách sạn</a>
-  
-   <div class="ota-links-container">
-  <div class="ota-inline">
-   <div class="left"><i class="fa-solid fa-hotel" style="margin-right:8px"></i> Đặt phòng trực tuyến</div>
-   <div class="ota-links">
-    <a class="ota-agoda" href="https://www.agoda.com/en-nz/sam-nguy-n-hotel-khach-s-n-sam-nguy-n-vung-tau/hotel/vung-tau-vn.html" target="_blank">Agoda</a>
-    <a class="ota-traveloka" href="https://www.traveloka.com/vi-vn/hotel/vietnam/sam-nguyen-hotel-9000000667839" target="_blank">Traveloka</a>
-   </div>
-  </div>
-   </div>
-  </div>
-
+  <div class="price-note">* Giá căn bản để tham khảo, vui lòng xem mục **Chính sách giá & Phụ thu** để biết thêm chi tiết.</div>
  </div>
+
+    <div class="accordion-wrapper">
+        
+        <div class="accordion-item">
+            <button class="accordion-header" data-acc-id="acc1">
+                💰 Chính sách giá & Phụ thu (Check-in/out sớm/trễ)
+            </button>
+            <div class="accordion-content">
+                
+                <h4>⏰ Khoản Phụ Thu Check-in sớm / Check-out trễ:</h4>
+                <ul>
+                    <li>• Nhận phòng trước 9:00: phụ thu **50%** giá phòng trọn ngày.</li>
+                    <li>• Nhận phòng từ 9:00 – 13:00: phụ thu **30%** giá phòng trọn ngày.</li>
+                    <li>• Trả phòng đến 15:00: phụ thu **30%** giá phòng trọn ngày.</li>
+                    <li>• Trả phòng đến 18:00: phụ thu **50%** giá phòng trọn ngày.</li>
+                    <li>• Trả phòng sau 18:00: tính giá **1 đêm**.</li>
+                </ul>
+                <p><b>Khách thêm:</b> **100.000đ/người** (Giới hạn tối đa 1 khách thêm/phòng).</p>
+                <p><b>Thứ 7 và ngày Lễ, Tết:</b> phụ thu **+50%** giá phòng niêm yết.</p>
+
+                <div class="sub-accordion">
+                    <button class="sub-accordion-header">
+                        🏷️ Chính sách giá khác
+                    </button>
+                    <div class="sub-accordion-content">
+                        <p style="margin-top: 5px;">Khách sạn có chính sách giá linh hoạt phù hợp với nhu cầu lưu trú đa dạng của Quý khách, bao gồm các hình thức ưu đãi:</p>
+                        <ul class="price-note-list" style="list-style-type: square; margin-left: 20px;">
+                            <li>• **Thuê trong ngày** (**06:00 - 18:00**)</li>
+                            <li>• **Thuê qua đêm** (**21:00 - 09:00**)</li>
+                            <li>• **Lưu trú dài hạn** (Thuê tuần, Thuê tháng)</li>
+                        </ul>
+                        <p style="font-weight: 600; color: var(--danger); margin-top: 5px;">Vui lòng liên hệ trực tiếp Lễ tân hoặc Hotline để biết chi tiết và nhận giá tốt nhất.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="accordion-item">
+            <button class="accordion-header" data-acc-id="acc2">
+                🗓️ Quy Định Đặt / Hủy / Đổi Ngày
+            </button>
+            <div class="accordion-content">
+                <h4>1. Điều kiện Xác nhận Đặt phòng:</h4>
+                <ul>
+                    <li>• Khách phải đặt cọc **50%** tổng giá trị đặt phòng để xác nhận (chuyển khoản).</li>
+                    <li>• Khách đặt trong ngày: có thể thanh toán **100%** tại quầy lễ tân.</li>
+                    <li>• Nếu không đặt cọc, khách sạn không cam kết giữ phòng.</li>
+                </ul>
+                <h4>2. Chính sách Hủy phòng (Tính theo giờ Check-in 14:00):</h4>
+                <ul>
+                    <li>• Hủy/Đổi ngày trước **72 giờ (3 ngày)** so với ngày Check-in: được hoàn lại **100%** tiền cọc.</li>
+                    <li>• Hủy/Đổi ngày trước **24 giờ (1 ngày)** so với ngày Check-in: hoàn lại **50%** tiền cọc.</li>
+                    <li>• Hủy/Đổi ngày **sau 24 giờ** hoặc **Không đến (No-show)**: **Mất toàn bộ tiền cọc**.</li>
+                </ul>
+                <h4>3. Trường hợp Bất khả kháng:</h4>
+                <ul>
+                    <li>• Áp dụng khi có thông báo cấm du lịch chính thức từ cơ quan chức năng (Thiên tai, Dịch bệnh).</li>
+                    <li>• Khách hàng được hỗ trợ **hoàn 100% tiền cọc** hoặc **bảo lưu** (thời hạn 6 tháng).</li>
+                </ul>
+                <p style="margin-top:10px; font-size:0.9rem; color:#8b0000;">**Quy trình hoàn tiền:** Tiền cọc sẽ được chuyển khoản lại trong vòng **3 - 5 ngày làm việc** tính từ ngày khách dự kiến trả phòng.</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-header" data-acc-id="acc3">
+                🏠 Nội Quy & Bảng Giá Đền Bù Vật Dụng
+            </button>
+            <div class="accordion-content">
+                
+                <h4>1. Nội Quy Khách Sạn:</h4>
+                <ul>
+                    <li>• Giờ nhận phòng tiêu chuẩn: **14:00** – Trả phòng tiêu chuẩn: **12:00** ngày hôm sau.</li>
+                    <li>• Khách hàng phải xuất trình **CCCD/Passport** còn hiệu lực khi nhận phòng.</li>
+                    <li>• **Yêu cầu không hút thuốc** lá, thuốc lào, vape trong phòng. Phụ thu **500.000đ** nếu vi phạm.</li>
+                    <li>• **Vui lòng không mang vật nuôi/thú cưng** vào khuôn viên khách sạn.</li>
+                    <li>• Sau **22:00**, vui lòng giữ âm lượng nhỏ, không tổ chức ca hát hoặc gây ồn ào.</li>
+                </ul>
+                
+                <h4>2. Bảng Giá Đền Bù Vật Dụng:</h4>
+                <p style="font-size:0.95rem; margin-bottom:5px;">Giá trị đền bù áp dụng cho trường hợp làm hỏng, mất mát hoặc không thể khôi phục trạng thái ban đầu.</p>
+                <table class="price-table" style="font-size:13px; margin-top:0">
+                    <tr><th>Vật dụng</th><th>Giá đền bù (VNĐ)</th></tr>
+                    <tr><td>**Thiết bị Điện tử / Nội thất**</td><td></td></tr>
+                    <tr><td>Tivi Smart (32-40 inch)</td><td>7.000.000</td></tr>
+                    <tr><td>Remote Tivi / Máy lạnh</td><td>150.000 / 100.000</td></tr>
+                    <tr><td>**Hư hỏng cố định**</td><td></td></tr>
+                    <tr><td>Nệm (Làm bẩn không giặt được)</td><td>5.000.000</td></tr>
+                    <tr><td>Lavabo / Bồn cầu</td><td>5.000.000</td></tr>
+                    <tr><td>Rèm cửa / Màn cửa (hư hỏng nặng)</td><td>800.000</td></tr>
+                    <tr><td>Khóa từ / Thẻ chìa khóa phòng</td><td>200.000 / 100.000</td></tr>
+                    <tr><td>Trầy xước sơn tường</td><td>100.000/m²</td></tr>
+                    <tr><td>**Vật dụng nhỏ**</td><td></td></tr>
+                    <tr><td>Ấm đun nước siêu tốc</td><td>350.000</td></tr>
+                    <tr><td>Mền/Chăn (Làm bẩn không giặt được)</td><td>400.000</td></tr>
+                    <tr><td>Gương phòng tắm / Đèn ngủ</td><td>600.000</td></tr>
+                    <tr><td>Khăn tắm / Khăn mặt</td><td>50.000 / 30.000</td></tr>
+                    <tr><td>Bộ ly tách / Gạt tàn</td><td>50.000 / 20.000</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+     
+ <div class="ota-links-container">
+ <div class="ota-inline">
+ <div class="left"><i class="fa-solid fa-hotel" style="margin-right:8px"></i> Đặt phòng trực tuyến</div>
+ <div class="ota-links">
+  <a class="ota-agoda" href="https://www.agoda.com/en-nz/sam-nguy-n-hotel-khach-s-n-sam-nguy-n-vung-tau/hotel/vung-tau-vn.html" target="_blank">Agoda</a>
+  <a class="ota-traveloka" href="https://www.traveloka.com/vi-vn/hotel/vietnam/sam-nguyen-hotel-9000000667839" target="_blank">Traveloka</a>
+ </div>
+ </div>
+ </div>
+ </div>
+
 </div>
-
-<div class="modal-full" id="guideModal" style="display:none">
- <div class="close-modal" onclick="closeModal('guideModal')">×</div>
- <div class="modal-inner">
-  <div style="padding:18px">
-   <h4>HƯỚNG DẪN ĐẶT PHÒNG - HỦY ĐẶT</h4>
-   <p style="color:#444">
-    <b>Đặt phòng:</b><br>
-    - Gọi trực tiếp hotline <b>0908 845 284</b> hoặc nhắn Zalo để xác nhận nhanh.<br>
-    - Có thể đặt qua các kênh OTA như Agoda, Traveloka.<br><br>
-    <b>Hủy đặt phòng:</b><br>
-    - Vui lòng thông báo trước ít nhất 2 giờ so với giờ nhận phòng dự kiến.<br>
-    - Trường hợp khách không đến hoặc báo muộn, phí hủy có thể được áp dụng.<br><br>
-    <b>Lưu ý:</b> Khách sạn giữ phòng tối đa 30 phút sau giờ hẹn nếu không có thông báo thêm.
-   </p>
-   <a class="btn-yellow" href="javascript:void(0)" onclick="closeModal('guideModal')">Đóng</a>
-  </div>
- </div>
-</div>
-
-<div class="modal-full" id="rulesModal" style="display:none">
- <div class="close-modal" onclick="closeModal('rulesModal')">×</div>
- <div class="modal-inner">
-  <div style="padding:18px">
-   <h4>NỘI QUY & BẢNG GIÁ ĐỀN BÙ</h4>
-   <p style="color:#444">
-    <b>Quy định trong phòng:</b><br>
-    - Không hút thuốc, nấu ăn hoặc mang vật nuôi vào phòng.<br>
-    - Không gây ồn ào, ảnh hưởng đến khách khác.<br>
-    - Khi ra khỏi phòng, vui lòng tắt điện, máy lạnh và khóa cửa cẩn thận.<br><br>
-    <b>Bảng giá đền bù:</b><br>
-    - Khăn tắm / khăn mặt: <b>100.000đ</b><br>
-    - Remote TV / Máy lạnh: <b>300.000đ</b><br>
-    - Mất chìa khóa: <b>150.000đ</b><br>
-    - Hư hỏng, vỡ đồ dùng khác: Đền bù theo giá thực tế.<br><br>
-    Xin chân thành cảm ơn quý khách đã hợp tác!
-   </p>
-   <a class="btn-yellow" href="javascript:void(0)" onclick="closeModal('rulesModal')">Đóng</a>
-  </div>
-  
- </div>
 </div>
 
 <div class="modal-full" id="bankModal" style="display:none">
- <div class="close-modal" onclick="closeModal('bankModal')">×</div>
- <div class="modal-inner">
-  <div style="padding:18px;text-align:center">
-   <div style="position:relative">
-    <img src="qr-bank.jpg" alt="QR Ngân hàng" style="width:150px;border-radius:10px;border:1px solid #eee;margin-bottom:10px">
-    <h4 style="color:var(--accent);margin:6px 0">CHUYỂN KHOẢN THANH TOÁN</h4>
-    <div style="text-align:left;max-width:320px;margin:0 auto">
-     <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #eee"><span>Ngân hàng:</span><span>MBBANK</span></div>
-     <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #eee"><span>Số tài khoản:</span><span id="bankNum" style="cursor:pointer" onclick="copyBank()">0908845284 <i class="fa-regular fa-copy" style="margin-left:6px"></i></span></div>
-     <div style="display:flex;justify-content:space-between;padding:8px 0"><span>Chủ TK:</span><span>NGUYEN THI SAM</span></div>
-    </div>
-    <p style="font-size:.85rem;color:#999;margin-top:10px">(Nhấn vào số tài khoản để sao chép)</p>
-   </div>
+<div class="close-modal" onclick="closeModal('bankModal')">×</div>
+<div class="modal-inner">
+ <div style="padding:18px;text-align:center">
+ <div style="position:relative">
+  <img src="qr-bank.jpg" alt="QR Ngân hàng" style="width:150px;border-radius:10px;border:1px solid #eee;margin-bottom:10px">
+  <h4 style="color:var(--accent);margin:6px 0">CHUYỂN KHOẢN THANH TOÁN</h4>
+  <div style="text-align:left;max-width:320px;margin:0 auto">
+  <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #eee"><span>Ngân hàng:</span><span>MBBANK</span></div>
+  <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #eee"><span>Số tài khoản:</span><span id="bankNum" style="cursor:pointer" onclick="copyBank()">0908845284 <i class="fa-regular fa-copy" style="margin-left:6px"></i></span></div>
+  <div style="display:flex;justify-content:space-between;padding:8px 0"><span>Chủ TK:</span><span>NGUYEN THI SAM</span></div>
   </div>
+  <p style="font-size:.85rem;color:#999;margin-top:10px">(Nhấn vào số tài khoản để sao chép)</p>
  </div>
+ </div>
+</div>
 </div>
 
 <div onclick="window.location.href= 'tel:0908845284'" class="hotline-phone-ring-wrap">
- <div class="hotline-phone-ring">
-  <div class="hotline-phone-ring-circle"></div>
-  <div class="hotline-phone-ring-circle-fill"></div>
-  <div class="hotline-phone-ring-img-circle">
-   <a href="tel:0908845284" class="pps-btn-img">
-    <img src="https://samnguyenhotel.com/wp-content/plugins/floating-click-to-contact-buttons/phone.png" alt="Gọi điện thoại" width="30">
-   </a>
-  </div>
+<div class="hotline-phone-ring">
+ <div class="hotline-phone-ring-circle"></div>
+ <div class="hotline-phone-ring-circle-fill"></div>
+ <div class="hotline-phone-ring-img-circle">
+ <a href="tel:0908845284" class="pps-btn-img">
+  <img src="https://samnguyenhotel.com/wp-content/plugins/floating-click-to-contact-buttons/phone.png" alt="Gọi điện thoại" width="30">
+ </a>
  </div>
- <div class="hotline-bar">
-  <a href="tel:0908845284"><span class="text-hotline">hotline</span></a>
- </div>
+</div>
+<div class="hotline-bar">
+ <a href="tel:0908845284"><span class="text-hotline">hotline</span></a>
+</div>
 </div>
 
 <div class="inner-fabs">
-  <a target="_blank" href="https://m.me/111704653690944" class="fab roundCool" data-tooltip="Nhắn tin Messenger">
-    <img class="inner-fab-icon" src="https://samnguyenhotel.com/wp-content/plugins/floating-click-to-contact-buttons/messenger.png" alt="Messenger">
-  </a>
-  <a target="_blank" href="https://goo.gl/maps/eKxVCtHZxS73mkwE6" class="fab roundCool" data-tooltip="Chỉ đường bản đồ">
-    <img class="inner-fab-icon" src="https://samnguyenhotel.com/wp-content/plugins/floating-click-to-contact-buttons/map.png" alt="Bản Đồ">
-  </a>
-  <a target="_blank" href="https://zalo.me/0908845284" class="fab roundCool" data-tooltip="Nhắn tin Zalo">
-    <img class="inner-fab-icon" src="https://samnguyenhotel.com/wp-content/plugins/floating-click-to-contact-buttons/zalo.png" alt="Zalo">
-  </a>
+ <a target="_blank" href="https://m.me/111704653690944" class="fab roundCool" data-tooltip="Nhắn tin Messenger">
+  <img class="inner-fab-icon" src="https://samnguyenhotel.com/wp-content/plugins/floating-click-to-contact-buttons/messenger.png" alt="Messenger">
+ </a>
+ <a target="_blank" href="https://goo.gl/maps/eKxVCtHZxS73mkwE6" class="fab roundCool" data-tooltip="Chỉ đường bản đồ">
+  <img class="inner-fab-icon" src="https://samnguyenhotel.com/wp-content/plugins/floating-click-to-contact-buttons/map.png" alt="Bản Đồ">
+ </a>
+ <a target="_blank" href="https://zalo.me/0908845284" class="fab roundCool" data-tooltip="Nhắn tin Zalo">
+  <img class="inner-fab-icon" src="https://samnguyenhotel.com/wp-content/plugins/floating-click-to-contact-buttons/zalo.png" alt="Zalo">
+ </a>
 </div>
 <div class="fab roundCool call-animation" id="main-fab">
-  <img class="img-circle" src="https://samnguyenhotel.com/wp-content/plugins/floating-click-to-contact-buttons/lienhe.png" alt="Liên Hệ">
+ <img class="img-circle" src="https://samnguyenhotel.com/wp-content/plugins/floating-click-to-contact-buttons/lienhe.png" alt="Liên Hệ">
 </div>
 
 <script>
-/* SHARE */
-function shareCard(){
- if(navigator.share){
-  navigator.share({title:'Danh Thiếp Sâm Nguyễn Hotel',text:'Thông tin Khách sạn Sâm Nguyễn',url:location.href});
- }else{
-  navigator.clipboard.writeText(location.href).then(()=>alert('Đã sao chép link danh thiếp!'));
- }
-}
 
-/* ROOM MODAL */
-function showRoom(title,img,desc,hour,over,full,amenities){
- document.getElementById('roomTitle').innerText = title;
- document.getElementById('roomImg').src = img;
- document.getElementById('roomDesc').innerText = desc;
- document.getElementById('pHour').innerText = hour;
- document.getElementById('pOver').innerText = over;
- document.getElementById('pFull').innerText = full;
+/* ========================================= */
+/* DATA & LOGIC ƯU ĐÃI (JSON Tĩnh) */
+/* ========================================= */
 
- // amenities list
- const ag = document.getElementById('roomAmenities');
- ag.innerHTML = '';
- if(Array.isArray(amenities)){
-  amenities.forEach(a=>{
-   const div = document.createElement('div');
-   div.className='amenity-item';
-   div.innerHTML = '<i class="fa-solid fa-check"></i><span>'+a+'</span>';
-   ag.appendChild(div);
-  });
-  document.getElementById('amenitiesSection').style.display='block';
- }else{
-  document.getElementById('amenitiesSection').style.display='none';
- }
-    
- // 🖼️ Xử lý Gallery ảnh (Đã khôi phục logic cụ thể)
- const galleryWrapper = document.getElementById('roomGallery');
- galleryWrapper.innerHTML = ''; // Xóa ảnh cũ
+// Dữ liệu JSON giả lập (CÁC SỐ ĐÃ ĐƯỢC CẬP NHẬT THEO YÊU CẦU CỦA BẠN)
+const customerData = [
+    { "phone": "0901234567", "message": "🎉 Khách hàng mới! Giảm **10%** giá phòng trọn ngày.", "type": "New" },
+    { "phone": "0908845284", "message": "🎁 Khách từng lưu trú! Giảm **20%** + Miễn phí nhận phòng sớm/trả trễ tối đa **2 giờ**.", "type": "Loyal" },
+    { "phone": "0912345678", "message": "🌟 Khách hàng Thân thiết (>5 lần)! Giảm **20%** + Lưu trú **24h** (từ giờ check-in) + Nâng hạng phòng miễn phí.", "type": "VIP" }
+];
 
- const match = img.match(/^(.+?)(?:\.jpg)$/i);
- const baseName = match ? match[1] : img.replace(/\.jpg$/i, ''); 
+const generalPromo = '📢 Tuy chưa có ưu đãi cá nhân, bạn vẫn nhận được **Giảm 5%** khi đặt phòng trực tiếp qua Zalo/Hotline!';
+const conditionNote = '<p style="font-size:0.85rem; color:red; margin-top:5px;">*Để áp dụng KM, Quý khách vui lòng để lại **1 đánh giá** trên Google Maps khi Check-in.</p>';
 
- let imgFiles = [];
- imgFiles.push(img); // Thêm ảnh chính
 
- // Logic thêm ảnh phụ dựa trên baseName
- if (baseName === 'room-image-1') {
-  imgFiles.push('room-image-1a.jpg', 'room-image-1b.jpg', 'room-image-1c.jpg', 'room-image-1d.jpg');
- } else if (baseName === 'room-image-2') {
-  imgFiles.push('room-image-2a.jpg', 'room-image-2b.jpg', 'room-image-2c.jpg', 'room-image-2d.jpg');
- } else if (baseName === 'room-image-3') {
-  imgFiles.push('room-image-3a.jpg', 'room-image-3b.jpg');
- } else if (baseName === 'room-image-vip') {
-  imgFiles.push('room-image-vip-1.jpg', 'room-image-vip-2.jpg', 'room-image-vip-3.jpg', 'room-image-vip-4.jpg');
- } else if (baseName === 'room-image-apt') {
-  imgFiles.push('room-image-apt-1.jpg', 'room-image-apt-1b.jpg', 'room-image-apt-1c.jpg', 'room-image-apt-2.jpg', 'room-image-apt-2a.jpg', 'room-image-apt-2b.jpg', 'room-image-apt-2c.jpg', 'room-image-apt-2d.jpg', 'room-image-apt-3.jpg');
- }
+function checkPromo() {
+    const phoneInput = document.getElementById('phoneInput');
+    const resultDiv = document.getElementById('promoResult');
+    const phone = phoneInput.value.trim();
 
- // Tạo các thẻ <img> cho Gallery
- imgFiles.forEach(fileName => {
-  const imgElement = document.createElement('img');
-  imgElement.src = fileName;
-  imgElement.alt = "Ảnh phòng " + title;
-  imgElement.className = 'gallery-item';
-  imgElement.onclick = function() {
-   document.getElementById('roomImg').src = fileName;
-  };
-  galleryWrapper.appendChild(imgElement);
- });
-    
- // Hiển thị Modal và khóa cuộn body
- document.getElementById('roomModal').style.display='block';
- document.body.style.overflow='hidden';
-}
+    // 1. Kiểm tra định dạng SĐT
+    if (phone.length !== 10 || isNaN(phone)) {
+        resultDiv.style.color = 'red';
+        resultDiv.innerHTML = '⚠️ Vui lòng nhập số điện thoại hợp lệ (10 số).';
+        return;
+    }
 
-function closeRoom(){
- document.getElementById('roomModal').style.display='none';
- document.body.style.overflow='';
-}
+    // 2. Kiểm tra trong dữ liệu JSON
+    const foundCustomer = customerData.find(customer => customer.phone === phone);
 
-/* GUIDE & RULES & BANK MODALS */
-function openGuide(){ document.getElementById('guideModal').style.display='block'; }
-function openRules(){ document.getElementById('rulesModal').style.display='block'; }
-function openBank(){ document.getElementById('bankModal').style.display='block'; }
-
-function closeModal(id){
- const el = document.getElementById(id);
- if(el){ el.style.display='none'; document.body.style.overflow=''; }
-}
-
-function copyBank(){
- const t = document.getElementById('bankNum').innerText.replace(/\s+/g,'').trim();
- navigator.clipboard.writeText(t).then(()=>alert('✅ Đã sao chép Số tài khoản: '+t)).catch(()=>alert('Không thể sao chép tự động. Vui lòng sao chép thủ công.'));
+    if (foundCustomer) {
+        // Trạng thái: Số điện thoại có trong danh sách
+        resultDiv.style.color = '#008000';
+        resultDiv.innerHTML = `✅ ${foundCustomer.message} ${conditionNote}`;
+    } else {
+        // Trạng thái: Số điện thoại KHÔNG có trong danh sách
+        resultDiv.style.color = '#d06000'; 
+        resultDiv.innerHTML = generalPromo;
+    }
 }
 
 
 /* ========================================= */
-/* LOGIC NÚT NỔI (FAB) - CLICK-TO-TOGGLE */
+/* FUNCTION KHÁC */
+/* ========================================= */
+
+/* SHARE */
+function shareCard(){
+if(navigator.share){
+navigator.share({title:'Danh Thiếp Sâm Nguyễn Hotel',text:'Thông tin Khách sạn Sâm Nguyễn',url:location.href});
+}else{
+navigator.clipboard.writeText(location.href).then(()=>alert('Đã sao chép link danh thiếp!'));
+}
+}
+
+/* ROOM MODAL */
+function showRoom(title,img,desc,hour,over,full,amenities){
+document.getElementById('roomTitle').innerText = title;
+document.getElementById('roomImg').src = img;
+document.getElementById('roomDesc').innerText = desc;
+document.getElementById('pHour').innerText = hour;
+// document.getElementById('pOver').innerText = over; // Đã loại bỏ
+document.getElementById('pFull').innerText = full;
+
+// amenities list
+const ag = document.getElementById('roomAmenities');
+ag.innerHTML = '';
+if(Array.isArray(amenities)){
+amenities.forEach(a=>{
+const div = document.createElement('div');
+div.className='amenity-item';
+div.innerHTML = '<i class="fa-solid fa-check"></i><span>'+a+'</span>';
+ag.appendChild(div);
+});
+document.getElementById('amenitiesSection').style.display='block';
+}else{
+document.getElementById('amenitiesSection').style.display='none';
+}
+
+// 🖼️ Xử lý Gallery ảnh
+const galleryWrapper = document.getElementById('roomGallery');
+galleryWrapper.innerHTML = ''; 
+
+const match = img.match(/^(.+?)(?:\.jpg)$/i);
+const baseName = match ? match[1] : img.replace(/\.jpg$/i, '');
+
+let imgFiles = [];
+imgFiles.push(img); // Thêm ảnh chính
+
+// Logic thêm ảnh phụ dựa trên baseName (Chú ý: bạn cần cung cấp các file ảnh này)
+if (baseName === 'room-image-1') {
+imgFiles.push('room-image-1a.jpg', 'room-image-1b.jpg', 'room-image-1c.jpg', 'room-image-1d.jpg');
+} else if (baseName === 'room-image-2') {
+imgFiles.push('room-image-2a.jpg', 'room-image-2b.jpg', 'room-image-2c.jpg', 'room-image-2d.jpg');
+} else if (baseName === 'room-image-3') {
+imgFiles.push('room-image-3a.jpg', 'room-image-3b.jpg');
+} else if (baseName === 'room-image-vip') {
+imgFiles.push('room-image-vip-1.jpg', 'room-image-vip-2.jpg', 'room-image-vip-3.jpg', 'room-image-vip-4.jpg');
+} else if (baseName === 'room-image-apt') {
+imgFiles.push('room-image-apt-1.jpg', 'room-image-apt-1b.jpg', 'room-image-apt-1c.jpg', 'room-image-apt-2.jpg', 'room-image-apt-2a.jpg', 'room-image-apt-2b.jpg', 'room-image-apt-2c.jpg', 'room-image-apt-2d.jpg', 'room-image-apt-3.jpg');
+}
+
+// Tạo các thẻ <img> cho Gallery
+imgFiles.forEach(fileName => {
+const imgElement = document.createElement('img');
+imgElement.src = fileName;
+imgElement.alt = "Ảnh phòng " + title;
+imgElement.className = 'gallery-item';
+imgElement.onclick = function() {
+document.getElementById('roomImg').src = fileName;
+};
+galleryWrapper.appendChild(imgElement);
+});
+
+// Hiển thị Modal và khóa cuộn body
+document.getElementById('roomModal').style.display='block';
+document.body.style.overflow='hidden';
+}
+
+function closeRoom(){
+document.getElementById('roomModal').style.display='none';
+document.body.style.overflow='';
+}
+
+/* BANK MODAL */
+function openBank(){ document.getElementById('bankModal').style.display='block'; }
+
+function closeModal(id){
+const el = document.getElementById(id);
+if(el){ el.style.display='none'; document.body.style.overflow=''; }
+}
+
+function copyBank(){
+const t = document.getElementById('bankNum').innerText.replace(/\s+/g,'').trim();
+navigator.clipboard.writeText(t).then(()=>alert('✅ Đã sao chép Số tài khoản: '+t)).catch(()=>alert('Không thể sao chép tự động. Vui lòng sao chép thủ công.'));
+}
+
+
+/* ========================================= */
+/* LOGIC NÚT NỔI (FAB) - CLICK-TO-TOGGLE & ACCORDION */
 /* ========================================= */
 
 const mainFab = document.getElementById('main-fab');
 const innerFabs = document.querySelector('.inner-fabs');
 
-// Hàm kiểm tra trạng thái mở/đóng
+// Hàm kiểm tra trạng thái mở/đóng FAB
 function toggleFabs() {
-  const isOpened = innerFabs.classList.toggle('active'); // toggle trả về true/false sau khi chuyển đổi
-  mainFab.classList.toggle('active', isOpened);
+ const isOpened = innerFabs.classList.toggle('active');
+ mainFab.classList.toggle('active', isOpened);
 }
 
-// 1. Xử lý sự kiện CLICK (Mở/Đóng)
-mainFab.addEventListener('click', function(e) {
-  e.stopPropagation(); // Ngăn sự kiện click lan ra ngoài
-  toggleFabs();
-});
+// HÀM XỬ LÝ ACCORDION PHỤ (LỒNG NHAU)
+function setupSubAccordion() {
+    const subHeaders = document.querySelectorAll('#roomModal .sub-accordion-header');
 
-// 2. Đóng FAB nếu click ra ngoài khu vực FAB
-document.addEventListener('click', function(event) {
-  const isClickInsideFabArea = mainFab.contains(event.target) || innerFabs.contains(event.target);
- 
-  if (!isClickInsideFabArea && innerFabs.classList.contains('active')) {
-    toggleFabs();
-  }
-});
+    subHeaders.forEach(header => {
+        if (!header.dataset.listenerAttachedSub) {
+            header.addEventListener('click', function(e) {
+                e.stopPropagation(); // Ngăn chặn sự kiện nổi bọt lên Accordion cha
 
-// 3. Đóng Modal khi click ra ngoài khu vực nội dung (modal-inner)
-document.getElementById('roomModal').addEventListener('click', function(e){
- if(e.target === this) closeRoom();
-});
-['guideModal','rulesModal','bankModal'].forEach(id=>{
- const el = document.getElementById(id);
- if(el) el.addEventListener('click', function(e){ if(e.target===this) closeModal(id); });
-});
+                const content = this.nextElementSibling;
+                
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    content.classList.remove('active');
+                    this.classList.remove('active');
+                } else {
+                    // Mở Sub-accordion
+                    content.style.maxHeight = content.scrollHeight + 50 + "px"; // +50 cho padding và margin bên trong
+                    content.classList.add('active');
+                    this.classList.add('active');
+                    
+                    // Điều chỉnh chiều cao Accordion cha (cần thiết khi mở Sub-accordion)
+                    const parentContent = this.closest('.accordion-content');
+                    if (parentContent) {
+                        parentContent.style.maxHeight = parentContent.scrollHeight + content.scrollHeight + 50 + "px";
+                    }
+                }
+            });
+            header.dataset.listenerAttachedSub = 'true';
+        }
+    });
+}
 
+
+// HÀM XỬ LÝ ACCORDION CHÍNH
+function setupAccordion() {
+    const accordionHeaders = document.querySelectorAll('#roomModal .accordion-header');
+
+    accordionHeaders.forEach(header => {
+        if (!header.dataset.listenerAttachedMain) {
+            header.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                
+                // Đóng tất cả các mục khác trong cùng modal
+                document.querySelectorAll('#roomModal .accordion-header').forEach(otherHeader => {
+                    if (otherHeader !== this) {
+                        const otherContent = otherHeader.nextElementSibling;
+                        otherContent.style.maxHeight = null;
+                        otherContent.classList.remove('active');
+                        otherHeader.classList.remove('active');
+                    }
+                });
+
+                // Mở/Đóng mục hiện tại
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    content.classList.remove('active');
+                    this.classList.remove('active');
+                    
+                    // Đóng tất cả sub-accordion bên trong (nếu có)
+                    content.querySelectorAll('.sub-accordion-header').forEach(subHeader => {
+                        subHeader.classList.remove('active');
+                        subHeader.nextElementSibling.style.maxHeight = null;
+                        subHeader.nextElementSibling.classList.remove('active');
+                    });
+                    
+                } else {
+                    // Khi mở, tính toán chiều cao nội dung (chỉ bao gồm phần tử hiển thị mặc định, Sub-accordion vẫn đóng)
+                    content.style.maxHeight = content.scrollHeight + 30 + "px"; 
+                    content.classList.add('active');
+                    this.classList.add('active');
+                }
+            });
+            header.dataset.listenerAttachedMain = 'true';
+        }
+    });
+    
+    // GỌI HÀM SETUP SUB-ACCORDION
+    setupSubAccordion(); 
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Gọi setupAccordion khi Modal được mở hoặc DOM tải xong (đảm bảo hàm tồn tại)
+    setupAccordion(); 
+
+    // 1. Xử lý sự kiện CLICK FAB (Mở/Đóng)
+    mainFab.addEventListener('click', function(e) {
+        e.stopPropagation();
+        toggleFabs();
+    });
+
+    // 2. Đóng FAB nếu click ra ngoài khu vực FAB
+    document.addEventListener('click', function(event) {
+        const isClickInsideFabArea = mainFab.contains(event.target) || innerFabs.contains(event.target);
+        
+        if (!isClickInsideFabArea && innerFabs.classList.contains('active')) {
+            toggleFabs();
+        }
+    });
+
+    // 3. Đóng Modal khi click ra ngoài khu vực nội dung
+    ['roomModal', 'bankModal'].forEach(id=>{
+        const el = document.getElementById(id);
+        if(el) el.addEventListener('click', function(e){ if(e.target===this) closeModal(id); });
+    });
+});
 </script>
 </body>
 </html>

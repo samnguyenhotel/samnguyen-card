@@ -1,0 +1,1168 @@
+/* ========================================= */
+/* 1. CSS VARIABLES & BASE */
+/* ========================================= */
+:root {
+  /* Luxury palette */
+  --primary: #daa520;
+  --accent: #194639;
+  --light: #f7f3e8;
+  --text: #333;
+  --danger: #e53935;
+  /* xanh na vy 20274d*/
+}
+
+/* Base Reset & Typography */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background: #fefefe;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 16px 0 80px;
+  color: var(--text);
+}
+
+/* Touch Device Enhancements & Base Transition/Tap */
+.actions-row a,
+.icon,
+.price-toggle-btn,
+.room-card,
+.ota-links a,
+.accordion-header,
+.sub-accordion-header,
+.close-modal {
+  /* Standardized touch action/highlighting */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.06);
+  touch-action: manipulation;
+}
+
+/* Media Query Base Padding */
+@media (max-width: 480px) {
+  body {
+    padding: 12px 0 60px;
+  }
+}
+
+.card {
+  width: 100%;
+  max-width: 450px;
+  background: #ebebebcb;
+
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  position: relative;
+  margin: 0 8px; /* Standardized margin */
+}
+
+@media (max-width: 480px) {
+  .card {
+    max-width: 100%;
+    margin: 0 8px;
+  }
+}
+
+/* ========================================= */
+/* 2. HERO & PROFILE SECTION (LOGO, NAME, SLOGAN) */
+/* ========================================= */
+.hero {
+  height: 170px; /* Standardized height from later declaration */
+  /* Remove duplicate declaration: background: url... */
+  background: linear-gradient(rgba(11, 33, 64, 0.55), rgba(11, 33, 64, 0.28)),
+    url("https://samnguyenhotel.com/wp-content/uploads/2025/11/banner.jpg")
+      center/cover no-repeat;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  /* .hero { height: 160px; } - Keeping the 170px hero height to avoid unnecessary complexity/override if 170px is desired */
+}
+
+.profile {
+  padding: 0 18px; /* Keep 18px horizontal padding */
+  text-align: center;
+  margin-top: -60px;
+  position: relative;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.qr-card {
+  position: absolute;
+  right: -30px;
+  bottom: -15px;
+  width: 55px;
+  height: 55px;
+  border-radius: 6px;
+  background: #ffffff61
+    url("https://samnguyenhotel.com/wp-content/uploads/2025/11/qr-card.png")
+    center/cover;
+  background-size: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border: 2px solid white;
+}
+
+.hotel-name {
+  margin-top: 12px; /* Standardized margin-top */
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.hotel-sub {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 12px; /* Standardized margin-bottom */
+}
+
+.hotel-slogan {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--primary);
+  font-weight: 500;
+  margin-top: 8px; /* Standardized margin-top */
+  letter-spacing: 0.3px;
+}
+
+/* ========================================= */
+/* 3. ACTION BUTTONS (Share, Save Contact) */
+/* ========================================= */
+.actions-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  border: 1px solid hsl(0, 0%, 57%);
+  /* background: rgba(255, 255, 255, 0.95); */
+  border-radius: 50px;
+  margin: 12px 16px;
+  overflow: hidden;
+}
+
+.actions-row a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #444;
+  padding: 12px 16px; /* Standardized padding */
+  font-weight: 600;
+  transition: 0.18s;
+  border-radius: 0;
+}
+
+.actions-row a:hover {
+  background: #f0f0f0;
+}
+/* 3.3. ICON GRID (SOCIAL) */
+.icon-grid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* ITEM -> ITEM: 8px */
+  gap: 8px;
+  flex-wrap: nowrap;
+  background: #ffffff86;
+  border-radius: 12px;
+  max-width: 1000px;
+  /* SECTION SPACING: 0 auto (center), padding: 8px */
+  margin: 0 auto;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.icon {
+  flex: 0 1 auto;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* ITEM -> ITEM: 6px */
+  gap: 6px;
+  min-width: auto;
+}
+
+/* ---------------------------------------------------- */
+/* A. STYLE CHUNG CHO CUSTOM IMAGE ICONS (.custom-img-icon) */
+/* ---------------------------------------------------- */
+.icon .custom-img-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: 0.18s;
+  background: #f5f5f5; /* Nền cơ bản */
+
+  /* Style riêng cho Image */
+  object-fit: contain;
+  padding: 4px; /* Giúp logo image không bị sát viền */
+}
+
+/* C. MÀU NỀN CỦA TỪNG ICON IMAGE */
+.icon-fb .custom-img-icon {
+  background: #e9ecff;
+}
+
+.icon-yt .custom-img-icon {
+  background: #fff0f0;
+}
+
+.icon-map .custom-img-icon {
+  background: #e0f0e6;
+}
+
+.icon-zalo .custom-img-icon.zalo-img-icon {
+  background: #e6f1ff;
+}
+
+.icon-tiktok .custom-img-icon.tiktok-img-icon {
+  background: #f0f0f0;
+}
+
+.icon-mail .custom-img-icon.mail-img-icon {
+  background: #ffe6e6;
+}
+
+.icon-review .custom-img-icon.review-img-icon {
+  background: #fff9e0;
+}
+
+.icon .custom-img-icon:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================= */
+/* 5. PRICE TOGGLE BUTTON & SUMMARY TABLE */
+/* ========================================= */
+.price-summary-section {
+  margin: 8px 16px;
+}
+
+.price-summary-section h3 {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 1.2rem;
+  border-bottom: 3px solid var(--primary);
+  padding-bottom: 8px;
+}
+
+/* Re-defined and standardized price-toggle-btn properties */
+.price-toggle-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  background: var(--light); /* Use var(--light) */
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  text-align: left;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  color: var(--cta);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(184, 134, 11, 0.06);
+
+  padding: 8px 12px; /* Standardized padding */
+  box-sizing: border-box; /* Added for correct sizing */
+}
+
+/* Price toggle button with rotating arrow */
+.price-toggle-btn:focus {
+  outline: none;
+}
+
+@media (max-width: 480px) {
+  .price-toggle-btn {
+    width: 100%;
+    font-size: 0.9rem;
+    min-height: 36px;
+    display: flex; /* Keep it flex for icon positioning */
+    justify-content: space-between; /* Adjusted to space-between for icon */
+  }
+}
+
+.price-toggle-btn:hover {
+  background: #dcd9d3; /* Darker gold */
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(154, 111, 5, 0.12);
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .price-toggle-btn:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.price-table-hidden {
+  display: none;
+  margin-top: 12px;
+}
+
+.price-summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table scroll for mobile */
+@media (max-width: 480px) {
+  .price-summary-table-wrap {
+    overflow-x: auto;
+  }
+  .price-summary-table {
+    min-width: 320px; /* Ensure table is wider than container if needed */
+  }
+}
+
+.price-summary-table th,
+.price-summary-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+.price-summary-table thead th {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+}
+.price-summary-table tbody tr:nth-child(even) {
+  background: #fcfcfc;
+}
+.price-summary-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.price-summary-table .room-type {
+  text-align: left;
+  font-weight: 500;
+  color: var(--accent);
+}
+.price-summary-table .weekend-price {
+  font-weight: 700;
+  color: var(--primary);
+}
+.price-summary-section p {
+  font-size: 0.8rem;
+  color: #888;
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* ========================================= */
+/* 6. OUTSIDE ACCORDION (QUY ĐỊNH & NỘI QUY) */
+/* ========================================= */
+.accordion-item.outside {
+  border: 1px solid #e2dfd6;
+  border-radius: px;
+  background: var(--light);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  margin: 8px 16px;
+}
+
+.accordion-item.outside .accordion-header {
+  width: 100%;
+  font-size: 0.9;
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px; /* Standardized padding */
+}
+
+.accordion-item.outside .accordion-header i,
+.accordion-item.outside .accordion-header span.icon {
+  font-size: 1.1rem;
+}
+
+.accordion-item.outside .accordion-header:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 12px;
+  transition: max-height 0.3s ease, padding 0.25s ease;
+  line-height: 1.45;
+}
+.accordion-content.active {
+  padding: 0px 12px;
+}
+
+/* Sub-Accordion Headers */
+.sub-accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px;
+  background: var(--light);
+  border: 0px solid #e4dcc8;
+  border-radius: 8px;
+  margin-top: 0px; /* Standardized margin-top */
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  text-align: left;
+  appearance: none;
+  min-height: 44px;
+}
+
+@media (max-width: 480px) {
+  .sub-accordion-header {
+    font-size: 0.9rem;
+    padding: 12px;
+    min-height: 44px;
+  }
+}
+
+.sub-accordion-header.active {
+  background: #fff;
+  border-color: #cbbfaa;
+}
+
+.sub-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.28s ease, padding 0.2s ease;
+  padding: 0 12px;
+}
+.sub-accordion-content > div {
+  margin-top: 8px; /* Standardized margin-top */
+}
+.sub-accordion-content.active {
+  padding: 12px;
+}
+
+/* Sub-Accordion Content Styles (Grouped & Standardized) */
+.sub-accordion-content > div:nth-child(1), /* Hướng dẫn đặt & hủy phòng */
+.sub-accordion-content > div:nth-child(2), /* Nội quy khách sạn */
+.sub-accordion-content > div:nth-child(3) /* Bảng giá vật dụng */ {
+  padding: 12px 16px; /* Standardized padding */
+  border-radius: 10px;
+}
+
+.sub-accordion-content > div:nth-child(1) {
+  background: #f5f9ff;
+  border-left: 4px solid #4a90e2;
+}
+
+.sub-accordion-content > div:nth-child(2) {
+  background: #fdf6f6;
+  border-left: 4px solid #e57373;
+}
+
+.sub-accordion-content > div:nth-child(3) {
+  background: #f7fff8;
+  border-left: 4px solid #43a047;
+}
+
+.sub-accordion-content h4 {
+  font-size: 1rem;
+  margin: 12px 0 8px;
+}
+
+.sub-accordion-content ul {
+  margin-left: 18px;
+  line-height: 1.45; /* Standardized line-height */
+}
+
+.sub-accordion-content > div:nth-child(1) > div {
+  background: #fff3e0;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #ffa726;
+  margin-top: 12px;
+}
+.sub-accordion-content > div:nth-child(1) > div p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #b45300;
+}
+
+.price-note-list {
+  font-size: 0.9rem;
+  margin-left: 0;
+  padding-left: 8px;
+  list-style-type: disc;
+}
+
+/* Bảng giá vật dụng specific styles */
+.sub-accordion-content > div:nth-child(3) p:first-of-type {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+.sub-accordion-content > div:nth-child(3) p:last-of-type {
+  font-size: 0.9rem;
+  color: #b71c1c;
+  margin-top: 12px;
+}
+
+/* Table styles common to all sub-accordion price tables */
+.sub-accordion-content .price-table {
+  margin-top: 12px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px; /* From original inline style */
+}
+.sub-accordion-content .price-table tr th,
+.sub-accordion-content .price-table tr td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f4f4f4;
+  text-align: left;
+}
+.sub-accordion-content .price-table tr:last-child td {
+  border-bottom: none;
+}
+.sub-accordion-content > div:nth-child(3) .price-table th {
+  background: #f0f0f0;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.sub-accordion-content > div:nth-child(3) .price-table td:last-child {
+  font-weight: 700;
+  color: var(--danger);
+  text-align: right;
+  min-width: 100px;
+}
+
+/* ========================================= */
+/* 7. OTA LINKS BLOCK */
+/* ========================================= */
+.ota-links-container {
+  padding: 0px 16px 0;
+  margin-bottom: 8px;
+}
+
+.ota-inline {
+  background: var(--light);
+  padding: 8px; /* Standardized padding */
+  border-radius: 8px;
+  border: 1px solid #e4dcc8;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px; /* Standardized gap */
+}
+
+.ota-inline > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 550;
+  color: var(--accent);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.ota-links {
+  display: flex;
+  gap: 8px;
+}
+
+.ota-links a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 4px 12px; /* Standardized padding */
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: 0.18s;
+}
+
+.ota-agoda {
+  background: #edd9ac;
+  color: #f78615;
+  border: 1px solid rgba(184, 134, 11, 0.08);
+}
+
+.ota-agoda:hover {
+  background: #f6e6b8;
+  box-shadow: 0 4px 12px rgba(180, 140, 40, 0.12);
+  transform: translateY(-1px);
+}
+
+.ota-traveloka {
+  background: hwb(212 92% 3%);
+  color: #1677cd;
+  border: 1px solid rgba(11, 33, 64, 0.06);
+}
+
+.ota-traveloka:hover {
+  background: #0f4f88;
+  box-shadow: 0 4px 12px rgba(11, 33, 64, 0.08);
+  transform: translateY(-1px);
+}
+
+/* ========================================= */
+/* 8. ROOM LISTING SECTION */
+/* ========================================= */
+.rooms {
+  padding: 12px 16px;
+}
+
+@media (max-width: 480px) {
+  .rooms {
+    padding: 12px; /* Standardized padding */
+  }
+}
+
+.rooms h3 {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 1.2rem;
+  border-bottom: 3px solid var(--primary);
+  padding-bottom: 8px;
+}
+
+@media (max-width: 480px) {
+  .rooms h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+}
+
+.room-list {
+  display: grid;
+  gap: 12px;
+}
+
+.room-card {
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  border: 2px solid rgba(212, 160, 23, 0.08);
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.room-card:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .room-card:hover {
+    transform: none;
+  }
+}
+
+.room-thumb {
+  height: 130px;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 480px) {
+  .room-thumb {
+    height: 110px;
+  }
+}
+
+.room-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 36px;
+  background: #5c5b5b96;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .room-overlay {
+    height: 36px;
+    font-size: 0.85rem;
+  }
+}
+
+.overlay-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.overlay-price {
+  font-weight: 700;
+}
+
+/* ========================================= */
+/* 9. VIDEO & PROMO SECTION */
+/* ========================================= */
+.video-section {
+  padding: 0 0 16px;
+}
+.video-section h4 {
+  margin: 0 16px 8px; /* Standardized horizontal margin */
+  color: var(--accent);
+}
+
+.video-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 16px 16px; /* Standardized horizontal/bottom margin */
+}
+
+.video-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ========================================= */
+/* 10. FULL SCREEN MODAL (ROOM MODAL) */
+/* ========================================= */
+.modal-full {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  background: #fff;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal-inner {
+  max-width: 450px;
+  margin: 0 auto;
+  background: #fff;
+  min-height: 100%;
+  padding-bottom: 80px;
+}
+
+.close-modal {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  cursor: pointer;
+  z-index: 1200;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.modal-header-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+@media (max-width: 480px) {
+  .modal-header-img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 420px) {
+  .modal-header-img {
+    height: 200px;
+  }
+}
+
+.modal-content {
+  padding: 0 12px;
+  padding-top: 0;
+}
+
+.modal-content h4 {
+  margin: 0 0 12px;
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 8px;
+}
+
+.modal-content p {
+  color: #555;
+  margin: 0 0 12px;
+  font-size: 0.85rem;
+  line-height: 1.45; /* Standardized line-height */
+}
+
+.room-title-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.room-price-box {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+#oldPrice {
+  font-size: 0.75rem;
+  color: #777;
+  text-decoration: line-through;
+  margin-right: 4px;
+}
+
+#newPrice {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--danger); /* Use var(--danger) */
+}
+
+/* ========================================= */
+/* 11. MODAL GALLERY */
+/* ========================================= */
+#roomGallery {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 12px 16px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #eee;
+}
+
+#roomGallery .gallery-item {
+  flex-shrink: 0;
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+#roomGallery .gallery-item:hover {
+  border-color: var(--primary);
+  transform: scale(1.05);
+}
+
+/* ========================================= */
+/* 12. AMENITIES (Tiện nghi) & SUPPORT */
+/* ========================================= */
+.support-section {
+  margin-top: 12px;
+  padding: 12px;
+  background: #faf9f7;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+.amenities-section h5 {
+  margin: 12px 0; /* Standardized margin */
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.amenity-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: #555;
+}
+
+.amenity-item i {
+  font-size: 0.75rem;
+  color: var(--primary);
+  width: 28px;
+  text-align: center;
+}
+
+/* Dịch vụ hỗ trợ */
+.support-section h5 {
+  font-size: 1.05rem;
+  color: var(--accent);
+  margin-bottom: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  margin-top: 8px; /* Standardized margin-top */
+}
+
+.support-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.support-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.45; /* Standardized line-height */
+}
+
+.support-item i {
+  color: var(--primary);
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+}
+
+/* ========================================= */
+/* 13. MODAL PRICE TABLE (General Table Structure) */
+/* ========================================= */
+.price-table {
+  margin-top: 12px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%; /* Added for consistency */
+  border-collapse: collapse; /* Added for consistency */
+}
+
+.price-table h5 {
+  background: var(--accent);
+  color: #fff;
+  margin: 0;
+  padding: 12px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.price-row {
+  display: flex;
+  padding: 12px;
+  border-bottom: 1px solid #f4f4f4;
+  align-items: center;
+}
+
+.price-row:last-child {
+  border-bottom: none;
+}
+
+.price-row .label {
+  flex: 1;
+  color: #555;
+  font-weight: 600;
+}
+
+.price-row .col {
+  flex: 1;
+  text-align: center;
+}
+
+.price-row .val {
+  flex: 1;
+  color: var(--danger); /* Use var(--danger) */
+  font-weight: 700;
+  text-align: right;
+}
+
+.price-note {
+  font-size: 0.82rem;
+  color: #888;
+  text-align: center;
+  padding: 12px;
+  background: #fff8f0;
+}
+
+/* ========================================= */
+/* 14. MODAL ACCORDION (Phụ phí & Chính sách) */
+/* ========================================= */
+.accordion-wrapper {
+  padding: 0 16px 12px;
+  margin-top: 12px;
+}
+
+.accordion-item {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-header {
+  background: var(--light);
+  color: var(--accent);
+  padding: 12px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 0.9rem;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .accordion-header {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    min-height: 40px;
+  }
+}
+
+.accordion-content h4 {
+  font-size: 1rem;
+  margin: 12px 0 8px;
+}
+
+.accordion-content ul {
+  margin: 8px 0 12px 12px;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.accordion-content li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  line-height: 1.45; /* Standardized line-height */
+}
+
+/* 💰 Phụ phí & Chính sách giá - Content */
+.fee-section h5 {
+  color: var(--accent);
+  margin-bottom: 6px;
+  margin-top: 8px; /* Standardized margin-top (was 10px) */
+}
+.extra-fee {
+  margin-top: 12px; /* Standardized margin-top */
+}
+.extra-fee p {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.45; /* Standardized line-height */
+}
+.extra-fee p:last-child {
+  margin-bottom: 0;
+}
+
+.sub-accordion {
+  margin-top: 0px; /* Standardized margin-top */
+}
+
+/* 🏷️ Chính sách giá - Content */
+.sub-accordion-content > p {
+  margin-top: 6px;
+  line-height: 1.45; /* Standardized line-height */
+}
+.sub-accordion-content .price-note-list {
+  list-style-type: square !important;
+  margin-left: 12px !important;
+}
+.sub-accordion-content p:last-child {
+  font-weight: 600;
+  color: var(--danger);
+  margin-top: 6px;
+}
+
+/* ========================================= */
+/* 15. BANK MODAL */
+/* ========================================= */
+.modal-full#bankModal {
+  display: none;
+}
+.modal-full#bankModal .modal-inner {
+  padding: 16px; /* Standardized padding (was 18px) */
+  text-align: center;
+}
+.modal-full#bankModal .modal-inner > div {
+  position: relative;
+}
+.modal-full#bankModal img {
+  width: 150px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  margin-bottom: 12px; /* Standardized margin-bottom (was 10px) */
+}
+.modal-full#bankModal h4 {
+  color: var(--accent);
+  margin: 8px 0; /* Standardized margin */
+}
+.modal-full#bankModal div:nth-child(4) {
+  text-align: left;
+  max-width: 320px;
+  margin: 0 auto;
+}
+.modal-full#bankModal div:nth-child(4) > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+.modal-full#bankModal div:nth-child(4) > div:not(:last-child) {
+  border-bottom: 1px dashed #eee;
+}
+#bankNum {
+  cursor: pointer;
+}
+#bankNum i {
+  margin-left: 6px;
+}
+.modal-full#bankModal p {
+  font-size: 0.85rem;
+  color: #999;
+  margin-top: 12px; /* Standardized margin-top (was 10px) */
+}

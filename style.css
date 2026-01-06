@@ -195,7 +195,7 @@ body {
   /* SECTION SPACING: 0 auto (center), padding: 8px */
   margin: 0 auto;
   padding: 8px;
-  border: 1px solid #ccc;
+  
 }
 
 .icon {
@@ -1194,4 +1194,5 @@ body {
   color: #999;
   margin-top: 12px; /* Standardized margin-top (was 10px) */
 }
+
 
